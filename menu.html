@@ -15,7 +15,7 @@
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 <header class="site-header" data-surface="carbon">
   <div class="container site-header__bar">
-    <a href="index.html" class="brand"><span class="brand__mark">P</span>El Plomazo</a>
+    <a href="index.html" class="brand"><img class="brand__logo" src="images/logo.webp" alt="" width="40" height="40">El Plomazo</a>
     <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html" aria-current="page">Menú</a><a href="sucursales.html">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
       <span class="sr-only">Abrir menú</span>
@@ -27,108 +27,509 @@
 <main id="main-content">
 <div class="container page">
   <h1 class="page-title anim-up">Menú</h1>
+  <p class="notice anim-up" style="--d:80ms">Precios de referencia tomados de la carta publicada en Rappi (pueden variar en el local). Pendientes de confirmar con el restaurante.</p>
   <nav class="pills pills--sticky" aria-label="Categorías del menú" data-filter-group="menu">
     <button type="button" class="pill is-active" data-filter="all">Todas</button>
-    <button type="button" class="pill" data-filter="tacos">Tacos</button><button type="button" class="pill" data-filter="especialidades">Especialidades</button><button type="button" class="pill" data-filter="bebidas">Bebidas</button><button type="button" class="pill" data-filter="postres">Postres</button>
+    <button type="button" class="pill" data-filter="tacos">Tacos</button><button type="button" class="pill" data-filter="tradicionales">Los tradicionales</button><button type="button" class="pill" data-filter="combinaciones-con-queso">Combinaciones con queso</button><button type="button" class="pill" data-filter="cortes">Cortes</button><button type="button" class="pill" data-filter="mas-queso-y-otras-delicias">Más queso y otras delicias</button><button type="button" class="pill" data-filter="hamburguesas">Hamburguesas</button>
   </nav>
   <section class="menu-cat" id="tacos" data-category="tacos" aria-labelledby="h-tacos">
     <div class="menu-cat__head reveal"><h2 id="h-tacos">Tacos</h2><div class="rule"></div></div>
+    
+    <div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/taco-de-asada.webp" alt="Taco de asada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Taco de asada</p><span class="price">$22</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con carne asada al carbón, verdura de temporada y salsa de la casa.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/taco-al-pastor.webp" alt="Taco al pastor" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Taco al pastor</p><span class="price">$22</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con carne al pastor adobada, verdura de temporada y salsa de la casa.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/taco-de-chorizo.webp" alt="Taco de chorizo" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Taco de chorizo</p><span class="price">$22</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con chorizo de la casa, verdura de temporada y salsa de la casa.</p>
+    
+  </div>
+</div>
+  </section>
+  <section class="menu-cat" id="tradicionales" data-category="tradicionales" aria-labelledby="h-tradicionales">
+    <div class="menu-cat__head reveal"><h2 id="h-tradicionales">Los tradicionales</h2><div class="rule"></div></div>
+    
+    <div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-bistek-encebollado.webp" alt="Tacos bistek encebollado" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos bistek encebollado</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con chuck roll de res y cebolla asada, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-chorizo.webp" alt="Tacos chorizo" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos chorizo</p><span class="price">$117</span></div>
+    <p class="product-row__desc">Orden de 3 tacos de chorizo preparado en casa.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-chuleta.webp" alt="Tacos chuleta" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos chuleta</p><span class="price">$118</span></div>
+    <p class="product-row__desc">Orden de 3 tacos de lomo de puerco picada y sazonada a la plancha.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-costilla.webp" alt="Tacos costilla" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos costilla</p><span class="price">$117</span></div>
+    <p class="product-row__desc">Orden de 3 tacos con corte 7 res picada y sazonada a la plancha.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-bistek.webp" alt="Tacos bistek" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos bistek</p><span class="price">$117</span></div>
+    <p class="product-row__desc">Orden de 3 tacos chuck roll de res picada y sazonada a la plancha.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-asada.webp" alt="Tacos asada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos asada</p><span class="price">$149.50</span></div>
+    <p class="product-row__desc">Orden de 5 tacos de los tradicionales con cebolla, cilantro, salsa, piña, tortilla de maíz, lomo de puerco.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/cebollas-asadas.webp" alt="Cebollas asadas" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Cebollas asadas</p><span class="price">$45.50</span></div>
+    <p class="product-row__desc">Una orden de cebollas enteras, preparadas al carbón o a la parrilla.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-de-champinones.webp" alt="Tacos de champiñones" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos de champiñones</p><span class="price">$117</span></div>
+    <p class="product-row__desc">Orden de 3 tacos de champiñones preparados.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-chuleta-con-tocino.webp" alt="Tacos chuleta con tocino" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos chuleta con tocino</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con tacos de lomo de puerco y tocino, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/chuleta-con-tocino.webp" alt="Chuleta con tocino" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Chuleta con tocino</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Lomo de puerco con tocino, porción personal.</p>
+    
+  </div>
+</div>
+  </section>
+  <section class="menu-cat" id="combinaciones-con-queso" data-category="combinaciones-con-queso" aria-labelledby="h-combinaciones-con-queso">
+    <div class="menu-cat__head reveal"><h2 id="h-combinaciones-con-queso">Combinaciones con queso</h2><div class="rule"></div></div>
     <div class="grid grid--2 mb"><div class="feature reveal">
-  <div class="ph tone-1 feature__photo" role="img" aria-label="Foto de Taco al pastor pendiente"><span class="ph__label">Foto de Taco al pastor pendiente</span></div>
+  <img class="photo feature__photo" src="images/menu/la-partida.webp" alt="La partida" loading="lazy">
   <div class="feature__shade"></div>
-  <div class="feature__text"><p class="feature__name">Taco al pastor</p><span class="price price--lg">$28</span></div>
+  <div class="feature__text"><p class="feature__name">La partida</p><span class="price price--lg">$180</span></div>
 </div><div class="feature reveal">
-  <div class="ph tone-2 feature__photo" role="img" aria-label="Foto de Taco de bistec pendiente"><span class="ph__label">Foto de Taco de bistec pendiente</span></div>
+  <img class="photo feature__photo" src="images/menu/chuleta-con-queso.webp" alt="Chuleta con queso" loading="lazy">
   <div class="feature__shade"></div>
-  <div class="feature__text"><p class="feature__name">Taco de bistec</p><span class="price price--lg">$30</span></div>
+  <div class="feature__text"><p class="feature__name">Chuleta con queso</p><span class="price price--lg">$169</span></div>
 </div></div>
     <div class="product-row reveal">
-  <div class="ph tone-5 product-row__photo" role="img" aria-label="Foto de Taco de tripa pendiente"><span class="ph__label">Foto de Taco de tripa pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/tacos-de-alambre.webp" alt="Tacos de alambre" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Taco de tripa</p><span class="price">$32</span></div>
-    <p class="product-row__desc">Crujiente, con limón y salsa de la casa (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Tacos de alambre</p><span class="price">$180</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con chuleta de puerco, tocino, cebolla, chile poblano queso, tamaño a elegir.</p>
     
   </div>
 </div><div class="product-row reveal">
-  <div class="ph tone-3 product-row__photo" role="img" aria-label="Foto de Taco de lengua pendiente"><span class="ph__label">Foto de Taco de lengua pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/la-sonrisa.webp" alt="La sonrisa" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Taco de lengua</p><span class="price">$38</span></div>
-    <p class="product-row__desc">Suave, con cilantro y cebolla (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">La sonrisa</p><span class="price">$136.60</span></div>
+    <p class="product-row__desc">Tortilla de harina con queso fundido, costilla encebollada y champiñones, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/choriqueso.webp" alt="Choriqueso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Choriqueso</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con chorizo de la casa y queso asadero, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/volcanes-al-pastor-o-asada.webp" alt="Volcanes al pastor o asada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Volcanes al pastor o asada</p><span class="price">$104</span></div>
+    <p class="product-row__desc">Tortilla de maíz dorada con queso fundido y carne a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/bistek-con-champinones-y-queso.webp" alt="Bistek con champiñones y queso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Bistek con champiñones y queso</p><span class="price">$143.65</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con bistek de res, champiñones y queso de asadero, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/submarino.webp" alt="Submarino" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Submarino</p><span class="price">$188.50</span></div>
+    <p class="product-row__desc">Carne a elegir envuelta en chicharrón de queso.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-piratas.webp" alt="Tacos piratas" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Tacos piratas</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con pulpa de res y queso, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/quesadilla-de-tortillas-de-preferencia.webp" alt="Quesadilla de tortillas de preferencia" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Quesadilla de tortillas de preferencia</p><span class="price">$45.50</span></div>
+    <p class="product-row__desc">Quesadilla con tortilla a elegir, porción individual.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/chuleta-especial.webp" alt="Chuleta especial" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Chuleta especial</p><span class="price">$162.50</span></div>
+    <p class="product-row__desc">Lomo de puerco, dos tortillas de harina con queso fundido.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/piratas.webp" alt="Piratas" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Piratas</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Piratas con pulpa de res de primera y queso.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/choriqueso.webp" alt="Choriqueso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Choriqueso</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Chorizo hecho en casa con queso asadero.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/alambre.webp" alt="Alambre" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Alambre</p><span class="price">$180</span></div>
+    <p class="product-row__desc">Chuleta de puerco con tocino, cebolla, chile poblano, queso.</p>
     
   </div>
 </div>
   </section>
-  <section class="menu-cat" id="especialidades" data-category="especialidades" aria-labelledby="h-especialidades">
-    <div class="menu-cat__head reveal"><h2 id="h-especialidades">Especialidades</h2><div class="rule"></div></div>
+  <section class="menu-cat" id="cortes" data-category="cortes" aria-labelledby="h-cortes">
+    <div class="menu-cat__head reveal"><h2 id="h-cortes">Cortes</h2><div class="rule"></div></div>
     <div class="grid grid--2 mb"><div class="feature reveal">
-  <div class="ph tone-4 feature__photo" role="img" aria-label="Foto de Gringa pendiente"><span class="ph__label">Foto de Gringa pendiente</span></div>
+  <img class="photo feature__photo" src="images/menu/arrachera-marinada.webp" alt="Arrachera marinada" loading="lazy">
   <div class="feature__shade"></div>
-  <div class="feature__text"><p class="feature__name">Gringa</p><span class="price price--lg">$65</span></div>
+  <div class="feature__text"><p class="feature__name">Arrachera marinada</p><span class="price price--lg">$364</span></div>
+</div><div class="feature reveal">
+  <img class="photo feature__photo" src="images/menu/fua.webp" alt="Fua" loading="lazy">
+  <div class="feature__shade"></div>
+  <div class="feature__text"><p class="feature__name">Fua</p><span class="price price--lg">$214.50</span></div>
+</div><div class="feature reveal">
+  <img class="photo feature__photo" src="images/menu/el-pionero.webp" alt="El pionero" loading="lazy">
+  <div class="feature__shade"></div>
+  <div class="feature__text"><p class="feature__name">El pionero</p><span class="price price--lg">$118.30</span></div>
 </div></div>
     <div class="product-row reveal">
-  <div class="ph tone-2 product-row__photo" role="img" aria-label="Foto de Quesabirria pendiente"><span class="ph__label">Foto de Quesabirria pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/tacos-alambre-con-arrachera.webp" alt="Tacos alambre con arrachera" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Quesabirria</p><span class="price">$42</span></div>
-    <p class="product-row__desc">Con consomé para acompañar (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Tacos alambre con arrachera</p><span class="price">$221</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con arrachera, cebolla, chile morrón, tocino, queso, tamaño a elegir.</p>
     
   </div>
 </div><div class="product-row reveal">
-  <div class="ph tone-6 product-row__photo" role="img" aria-label="Foto de Campechano pendiente"><span class="ph__label">Foto de Campechano pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/tacos-de-arrachera-marinada.webp" alt="Tacos de arrachera marinada" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Campechano</p><span class="price">$58</span></div>
-    <p class="product-row__desc">Bistec y chorizo sobre tortilla de maíz (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Tacos de arrachera marinada</p><span class="price">$227.50</span></div>
+    <p class="product-row__desc">Orden de 5 tacos con arrachera marinada, aguacate, tomate, cebolla asada y frijoles charros.</p>
     
   </div>
-</div><div class="product-row reveal is-unavailable">
-  <div class="ph tone-1 product-row__photo" role="img" aria-label="Foto de Costra de queso pendiente"><span class="ph__label">Foto de Costra de queso pendiente</span></div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/tacos-arrachera-marinada-con-queso.webp" alt="Tacos arrachera marinada con queso" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Costra de queso</p><span class="price">$70</span></div>
-    <p class="product-row__desc">Queso gratinado con carne a elegir (ejemplo).</p>
-    <span class="badge">Agotado</span>
+    <div class="product-row__head"><p class="product-row__name">Tacos arrachera marinada con queso</p><span class="price">$221</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con queso asadero y carne de arrachera, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/el-fogon-suizo.webp" alt="El fogón suizo" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">El fogón suizo</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con bistek de res, carne al pastor, champiñones y chile jalapeño, queso, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/que-me-ves.webp" alt="Que me ves" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Que me ves</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con chuleta, tocino, jamón, chile morrón, cebolla y queso gratinado, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/el-hawaiano.webp" alt="El hawaiano" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">El hawaiano</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con rajas, champiñones, piña en almíbar, queso, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/la-emboscada.webp" alt="La emboscada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">La emboscada</p><span class="price">$143.65</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con chuleta, tocino, champiñones, chile poblano, cebolla, jamón, salchicha queso, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/el-plomazo.webp" alt="El plomazo" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">El plomazo</p><span class="price">$105</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con carne al pastor, champiñones, queso, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/la-suiza.webp" alt="La suiza" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">La suiza</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con carne al pastor, queso asadero, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/bistek-a-la-mexicana.webp" alt="Bistek a la mexicana" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Bistek a la mexicana</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con pulpa de res, chile jalapeño, tomates y cebolla, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/el-plomazo.webp" alt="El plomazo" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">El plomazo</p><span class="price">$105</span></div>
+    <p class="product-row__desc">Carne al pastor con champiñones y queso, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/la-suiza.webp" alt="La suiza" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">La suiza</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Carne al pastor y queso asadero, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/la-emboscada.webp" alt="La emboscada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">La emboscada</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Chuleta, tocino, champinones, chile poblano, cebolla, jamon, salchicha y queso, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/el-hawaiano.webp" alt="El hawaiano" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">El hawaiano</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Rajas con champiñones, piña en almibar y queso, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/arrachera-marinada-con-queso.webp" alt="Arrachera marinada con queso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Arrachera marinada con queso</p><span class="price">$204</span></div>
+    <p class="product-row__desc">Queso asadero y arrachera, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/alambre-con-arrachera.webp" alt="Alambre con arrachera" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Alambre con arrachera</p><span class="price">$204</span></div>
+    <p class="product-row__desc">Alambre con arrachera, cebolla, chile, morrón, tocino, queso.</p>
+    
   </div>
 </div>
   </section>
-  <section class="menu-cat" id="bebidas" data-category="bebidas" aria-labelledby="h-bebidas">
-    <div class="menu-cat__head reveal"><h2 id="h-bebidas">Bebidas</h2><div class="rule"></div></div>
+  <section class="menu-cat" id="mas-queso-y-otras-delicias" data-category="mas-queso-y-otras-delicias" aria-labelledby="h-mas-queso-y-otras-delicias">
+    <div class="menu-cat__head reveal"><h2 id="h-mas-queso-y-otras-delicias">Más queso y otras delicias</h2><div class="rule"></div></div>
     
     <div class="product-row reveal">
-  <div class="ph tone-3 product-row__photo" role="img" aria-label="Foto de Agua de horchata pendiente"><span class="ph__label">Foto de Agua de horchata pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/sincronizada.webp" alt="Sincronizada" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Agua de horchata</p><span class="price">$25</span></div>
-    <p class="product-row__desc">Hecha en casa todos los días (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Sincronizada</p><span class="price">$115</span></div>
+    <p class="product-row__desc">Doble tortillas de harina, queso, jamón y aguacate, porción individual.</p>
     
   </div>
 </div><div class="product-row reveal">
-  <div class="ph tone-5 product-row__photo" role="img" aria-label="Foto de Agua de jamaica pendiente"><span class="ph__label">Foto de Agua de jamaica pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/papa-asada-con-queso.webp" alt="Papa asada con queso" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Agua de jamaica</p><span class="price">$25</span></div>
-    <p class="product-row__desc">Fresca y sin exceso de azúcar (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Papa asada con queso</p><span class="price">$214.50</span></div>
+    <p class="product-row__desc">Papa asada con mantequilla, queso fundido y trozos de tocino.</p>
     
   </div>
 </div><div class="product-row reveal">
-  <div class="ph tone-6 product-row__photo" role="img" aria-label="Foto de Refresco de botella pendiente"><span class="ph__label">Foto de Refresco de botella pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/papa-queso-y-carne-asada.webp" alt="Papa queso y carne asada" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Refresco de botella</p><span class="price">$28</span></div>
-    <p class="product-row__desc">Variedad según disponibilidad (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Papa queso y carne asada</p><span class="price">$214.50</span></div>
+    <p class="product-row__desc">Papa asada con mantequilla, queso y carne asada.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/las-doradas.webp" alt="Las doradas" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Las doradas</p><span class="price">$104</span></div>
+    <p class="product-row__desc">Orden de 3 tortillas de maíz rellenas de queso asadero, doradas al comal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/burrito-carne-asada.webp" alt="Burrito carne asada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Burrito carne asada</p><span class="price">$97.50</span></div>
+    <p class="product-row__desc">Burrito relleno de carne asada.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/burrito-suizo-carne-asada.webp" alt="Burrito suizo carne asada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Burrito suizo carne asada</p><span class="price">$104</span></div>
+    <p class="product-row__desc">Carne asada envuelta en tortilla y gratinada con queso fundido</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/burrito-pastor.webp" alt="Burrito pastor" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Burrito pastor</p><span class="price">$77.35</span></div>
+    <p class="product-row__desc">Burrito de carne al pastor, marinado.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/burrito-suizo-pastor.webp" alt="Burrito suizo pastor" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Burrito suizo pastor</p><span class="price">$97.50</span></div>
+    <p class="product-row__desc">Burrito de carne al pastor, queso fundido.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/champiqueso.webp" alt="Champiqueso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Champiqueso</p><span class="price">$118.30</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con queso fundido y champiñones, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/costilla-con-queso.webp" alt="Costilla con queso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Costilla con queso</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con corte de res y queso, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/la-granada.webp" alt="La granada" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">La granada</p><span class="price">$117</span></div>
+    <p class="product-row__desc">Salchicha para asar, queso de asadero, chile toreado y tortilla de harina, porción individual.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/la-arana.webp" alt="La araña" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">La araña</p><span class="price">$208</span></div>
+    <p class="product-row__desc">Cebolla asada rellena con carne a elegir y queso fundido en tortilla de harina.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/gringa-al-gusto.webp" alt="Gringa al gusto" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Gringa al gusto</p><span class="price">$130</span></div>
+    <p class="product-row__desc">Tortilla de harina con queso, carne a elegir, porción individual.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/rajas-con-queso.webp" alt="Rajas con queso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Rajas con queso</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con queso asadero y rajas de chile poblano, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/queso-fundido.webp" alt="Queso fundido" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Queso fundido</p><span class="price">$110.50</span></div>
+    <p class="product-row__desc">Orden de tres tacos con queso de asadero fundido.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/bistek-de-tocino.webp" alt="Bistek de tocino" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Bistek de tocino</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con pulpa de res combinada con tocino, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/bistek-con-champinones.webp" alt="Bistek con champiñones" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Bistek con champiñones</p><span class="price">$169</span></div>
+    <p class="product-row__desc">Taco en tortilla de maíz con pulpa de res combinada con champiñones, tamaño a elegir.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/papa-asada-con-mantequilla-y-queso.webp" alt="Papa asada con mantequilla y queso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Papa asada con mantequilla y queso</p><span class="price">$117</span></div>
+    <p class="product-row__desc">Papa asada con mantequilla y capa de queso fundido.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/papa-asada-con-mantequilla.webp" alt="Papa asada con mantequilla" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Papa asada con mantequilla</p><span class="price">$71.50</span></div>
+    <p class="product-row__desc">Papa horneada bañada en mantequilla derretida.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/rajas-con-queso.webp" alt="Rajas con queso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Rajas con queso</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Queso asadero y rajas de chile poblano, porción personal.</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <img class="photo product-row__photo" src="images/menu/champiqueso.webp" alt="Champiqueso" loading="lazy">
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Champiqueso</p><span class="price">$156</span></div>
+    <p class="product-row__desc">Queso fundido y champinones, porción personal.</p>
     
   </div>
 </div>
   </section>
-  <section class="menu-cat" id="postres" data-category="postres" aria-labelledby="h-postres">
-    <div class="menu-cat__head reveal"><h2 id="h-postres">Postres</h2><div class="rule"></div></div>
-    
+  <section class="menu-cat" id="hamburguesas" data-category="hamburguesas" aria-labelledby="h-hamburguesas">
+    <div class="menu-cat__head reveal"><h2 id="h-hamburguesas">Hamburguesas</h2><div class="rule"></div></div>
+    <div class="grid grid--2 mb"><div class="feature reveal">
+  <img class="photo feature__photo" src="images/menu/hamburguesa-tradicional.webp" alt="Hamburguesa tradicional" loading="lazy">
+  <div class="feature__shade"></div>
+  <div class="feature__text"><p class="feature__name">Hamburguesa tradicional</p><span class="price price--lg">$100</span></div>
+</div></div>
     <div class="product-row reveal">
-  <div class="ph tone-4 product-row__photo" role="img" aria-label="Foto de Flan casero pendiente"><span class="ph__label">Foto de Flan casero pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/hamburguesa-vegetariana.webp" alt="Hamburguesa vegetariana" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Flan casero</p><span class="price">$35</span></div>
-    <p class="product-row__desc">Receta de la casa (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Hamburguesa vegetariana</p><span class="price">$100</span></div>
+    <p class="product-row__desc">Hamburguesa con champiñones, rajas de chile poblano y piña en almíbar.</p>
     
   </div>
 </div><div class="product-row reveal">
-  <div class="ph tone-2 product-row__photo" role="img" aria-label="Foto de Arroz con leche pendiente"><span class="ph__label">Foto de Arroz con leche pendiente</span></div>
+  <img class="photo product-row__photo" src="images/menu/hamburguesa-al-pastor.webp" alt="Hamburguesa al pastor" loading="lazy">
   <div class="product-row__body">
-    <div class="product-row__head"><p class="product-row__name">Arroz con leche</p><span class="price">$30</span></div>
-    <p class="product-row__desc">Con canela espolvoreada (ejemplo).</p>
+    <div class="product-row__head"><p class="product-row__name">Hamburguesa al pastor</p><span class="price">$100</span></div>
+    <p class="product-row__desc">Hamburguesa con carne de lomo de cerdo al pastor.</p>
     
   </div>
 </div>
@@ -139,14 +540,14 @@
   <div class="container site-footer__grid">
     <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
     <div><h2>Contacto</h2><ul>
-      <li><a href="tel:8100000000">(81) 0000-0000 (ejemplo)</a></li>
-      <li><a href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      <li><a href="tel:6181534075">618 153 4075</a></li>
       
-      
+      <li><a href="https://www.instagram.com/taqueriaelplomazo/">Instagram</a></li>
+      <li><a href="https://www.facebook.com/taqueriaelplomazo/">Facebook</a></li>
     </ul></div>
     <div><h2>Legal</h2><ul><li><a href="privacidad.html">Aviso de privacidad</a></li></ul></div>
   </div>
-  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo. Contenido de ejemplo.</p></div>
+  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo · Durango, Dgo.</p></div>
 </footer>
 <script src="script.js" defer></script>
 </body>

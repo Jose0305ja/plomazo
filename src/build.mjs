@@ -2,13 +2,14 @@
 // Uso: npm run build   (no requiere dependencias, solo Node).
 import { writeFileSync } from "node:fs";
 import {
-  SITE, NAV, CATEGORIES, PRODUCTS, PROMOTIONS, BRANCHES, GALLERY, HISTORY,
+  SITE, NAV, CATEGORIES, PRODUCTS, PROMOTIONS, SERVICES, BRANCHES, GALLERY, HISTORY,
 } from "./content.mjs";
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-const money = (n) => `$${n}`;
+const money = (n) => `$${Number.isInteger(n) ? n : n.toFixed(2)}`;
 const waLink = (n) => `https://wa.me/${String(n).replace(/\D/g, "")}`;
+const empty = (title, text) => `<div class="empty reveal"><p class="empty__title">${title}</p><p class="muted">${text}</p></div>`;
 
 // Foto: si hay `image` usa <img>; si no, marcador con degradado.
 function photo({ image, label, tone = 1, className = "" }) {
@@ -26,7 +27,7 @@ function header(current) {
   return `<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 <header class="site-header" data-surface="carbon">
   <div class="container site-header__bar">
-    <a href="index.html" class="brand"><span class="brand__mark">P</span>${SITE.name}</a>
+    <a href="index.html" class="brand"><img class="brand__logo" src="images/logo.webp" alt="" width="40" height="40">${SITE.name}</a>
     <nav class="nav" aria-label="Principal">${links}</nav>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
       <span class="sr-only">Abrir menú</span>
@@ -44,13 +45,13 @@ function footer() {
     <div><h2>${SITE.name}</h2><ul>${navLinks}</ul></div>
     <div><h2>Contacto</h2><ul>
       <li><a href="tel:${SITE.phone}">${SITE.phoneLabel}</a></li>
-      <li><a href="${waLink(SITE.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      ${SITE.whatsapp ? `<li><a href="${waLink(SITE.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>` : ""}
       ${SITE.instagramUrl ? `<li><a href="${SITE.instagramUrl}">Instagram</a></li>` : ""}
       ${SITE.facebookUrl ? `<li><a href="${SITE.facebookUrl}">Facebook</a></li>` : ""}
     </ul></div>
     <div><h2>Legal</h2><ul><li><a href="privacidad.html">Aviso de privacidad</a></li></ul></div>
   </div>
-  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo. Contenido de ejemplo.</p></div>
+  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo · ${SITE.city}</p></div>
 </footer>`;
 }
 
@@ -86,7 +87,7 @@ const titleBlock = (t, extra = "") => `<h1 class="page-title anim-up">${t}</h1>$
 
 function productRow(p) {
   return `<div class="product-row reveal${p.unavailable ? " is-unavailable" : ""}">
-  ${photo({ image: p.image, label: `Foto de ${p.name} pendiente`, tone: p.tone, className: "product-row__photo" })}
+  ${photo({ image: p.image, label: p.name, className: "product-row__photo" })}
   <div class="product-row__body">
     <div class="product-row__head"><p class="product-row__name">${esc(p.name)}</p><span class="price">${money(p.price)}</span></div>
     <p class="product-row__desc">${esc(p.description)}</p>
@@ -97,7 +98,7 @@ function productRow(p) {
 
 function productFeature(p) {
   return `<div class="feature reveal">
-  ${photo({ image: p.image, label: `Foto de ${p.name} pendiente`, tone: p.tone, className: "feature__photo" })}
+  ${photo({ image: p.image, label: p.name, className: "feature__photo" })}
   <div class="feature__shade"></div>
   <div class="feature__text"><p class="feature__name">${esc(p.name)}</p><span class="price price--lg">${money(p.price)}</span></div>
 </div>`;
@@ -106,7 +107,7 @@ function productFeature(p) {
 function branchRow(b, level = 2) {
   const h = `h${level}`;
   return `<div class="branch-row reveal" data-search="${esc((b.name + " " + b.address).toLowerCase())}">
-  <div><${h} class="branch-row__name"><a href="sucursal-${b.slug}.html">${esc(b.name)} (ejemplo)</a></${h}><p class="muted">${esc(b.address)}</p></div>
+  <div><${h} class="branch-row__name"><a href="sucursal-${b.slug}.html">${esc(b.name)}</a></${h}><p class="muted">${esc(b.address)}</p></div>
   <div class="actions">
     <a class="btn btn--call btn--sm" href="tel:${b.phone}">Llamar</a>
     ${b.whatsapp ? `<a class="btn btn--wa btn--sm" href="${waLink(b.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>` : ""}
@@ -132,11 +133,12 @@ page({
   description: "Taquerías El Plomazo: tacos y antojitos norteños. Consulta el menú, encuentra tu sucursal más cercana y descubre las promociones activas.",
   current: "inicio",
   body: `<section class="hero" data-surface="carbon">
+  <img class="hero__bg" src="images/portada.webp" alt="" aria-hidden="true">
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="container hero__inner">
-    <div class="anim-up" style="--d:0ms">${eyebrow("Norteño, auténtico, de barrio")}</div>
+    <div class="anim-up" style="--d:0ms">${eyebrow(`Taquería · ${SITE.city}`)}</div>
     <h1 class="hero__title anim-up" style="--d:90ms">Tacos que se ganan el barrio a la parrilla</h1>
-    <p class="hero__lead anim-up" style="--d:180ms">Trompo al pastor, carbón encendido y las mismas recetas de siempre. Pide directo o pasa a cualquiera de nuestras sucursales.</p>
+    <p class="hero__lead anim-up" style="--d:180ms">Tacos al pastor y de asada, alambres, arrachera, gringas y hamburguesas. Pasa a cualquiera de nuestras tres sucursales en Durango.</p>
     <div class="actions anim-up" style="--d:270ms">
       <a class="btn" href="menu.html">Ver el menú</a>
       <a class="btn btn--outline-light" href="sucursales.html">Encontrar sucursal</a>
@@ -144,24 +146,24 @@ page({
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true" data-surface="carbon"><div class="marquee__track">${Array(2).fill("<span>Al pastor</span><span>Bistec</span><span>Tripa</span><span>Gringas</span><span>Quesabirria</span><span>Aguas frescas</span><span>Carbón</span><span>Barrio</span>").join("")}</div></div>
+<div class="marquee" aria-hidden="true" data-surface="carbon"><div class="marquee__track">${Array(2).fill("<span>Al pastor</span><span>Asada</span><span>Alambre</span><span>Arrachera</span><span>Gringas</span><span>Burritos</span><span>Hamburguesas</span><span>Papa asada</span>").join("")}</div></div>
 
 <div class="container section-stack">
   <section aria-labelledby="cat-h">
     <div class="section-head reveal"><h2 id="cat-h">Categorías</h2><a href="menu.html">Ver menú completo</a></div>
     <div class="grid grid--4">
-      ${CATEGORIES.map((c) => `<a class="tile reveal" href="menu.html#${c.slug}">${photo({ label: `Foto de ${c.name} pendiente`, tone: c.tone, className: "tile__photo" })}<div class="tile__shade"></div><p class="tile__name">${c.name}</p></a>`).join("")}
+      ${CATEGORIES.map((c) => `<a class="tile reveal" href="menu.html#${c.slug}">${photo({ image: c.image, label: c.name, className: "tile__photo" })}<div class="tile__shade"></div><p class="tile__name">${c.name}</p></a>`).join("")}
     </div>
   </section>
 
   <section aria-labelledby="dest-h">
-    <div class="section-head reveal"><h2 id="dest-h">Destacados</h2></div>
+    <div class="section-head reveal"><h2 id="dest-h">Destacados</h2><a href="menu.html">Ver menú completo</a></div>
     <div class="grid grid--2">${featured.slice(0, 4).map(productFeature).join("")}</div>
   </section>
 
-  <section aria-labelledby="promo-h">
-    <div class="section-head reveal"><h2 id="promo-h">Promociones</h2><a href="promociones.html">Ver todas</a></div>
-    <div class="grid grid--2">${PROMOTIONS.slice(0, 2).map((p) => promoCard(p, 3)).join("")}</div>
+  <section aria-labelledby="serv-h">
+    <div class="section-head reveal"><h2 id="serv-h">Taquizas para eventos</h2><a href="contacto.html">Cotizar</a></div>
+    ${SERVICES.map((s) => `<div class="service reveal"><p>${esc(s.description)}</p><a class="btn" href="contacto.html">Pedir cotización</a></div>`).join("")}
   </section>
 
   <section aria-labelledby="suc-h">
@@ -170,7 +172,7 @@ page({
   </section>
 
   <section class="about-strip reveal" aria-labelledby="nos-h">
-    <h2 id="nos-h">Una historia de lumbre y barrio</h2>
+    <h2 id="nos-h">Taquería de Durango</h2>
     <p>${esc(HISTORY[0])}</p>
     <a class="btn btn--outline" href="nosotros.html">Conocer más</a>
   </section>
@@ -185,6 +187,7 @@ page({
   current: "menu",
   body: `<div class="container page">
   ${titleBlock("Menú")}
+  <p class="notice anim-up" style="--d:80ms">Precios de referencia tomados de la carta publicada en Rappi (pueden variar en el local). Pendientes de confirmar con el restaurante.</p>
   <nav class="pills pills--sticky" aria-label="Categorías del menú" data-filter-group="menu">
     <button type="button" class="pill is-active" data-filter="all">Todas</button>
     ${CATEGORIES.map((c) => `<button type="button" class="pill" data-filter="${c.slug}">${c.name}</button>`).join("")}
@@ -223,11 +226,11 @@ for (const b of BRANCHES) {
   page({
     file: `sucursal-${b.slug}.html`,
     title: `${b.name} — Sucursales — El Plomazo`,
-    description: `Dirección, horario, teléfono y WhatsApp de la sucursal ${b.name} de Taquerías El Plomazo.`,
+    description: `Dirección, horario y teléfono de la sucursal ${b.name} de Taquerías El Plomazo en Durango.`,
     current: "sucursales",
     body: `<div class="container page">
   <p class="crumb"><a href="sucursales.html">← Todas las sucursales</a></p>
-  ${titleBlock(`${esc(b.name)} <small>(ejemplo)</small>`)}
+  ${titleBlock(esc(b.name))}
   <p class="lead muted anim-up" style="--d:80ms">${esc(b.address)}</p>
   <div class="grid grid--split">
     <div class="actions anim-up" style="--d:160ms;align-content:flex-start">
@@ -236,10 +239,11 @@ for (const b of BRANCHES) {
       <a class="btn btn--outline" href="${b.mapsUrl}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
     </div>
     <div class="anim-up" style="--d:240ms">
-      <h2 class="h-sm">Horario (ejemplo)</h2>
-      <table class="schedule"><caption class="sr-only">Horario de atención de ${esc(b.name)}</caption><tbody>
+      <h2 class="h-sm">Horario</h2>
+      ${b.schedule ? `<table class="schedule"><caption class="sr-only">Horario de atención de ${esc(b.name)}</caption><tbody>
         ${b.schedule.map(([d, h]) => `<tr><th scope="row">${d}</th><td>${h}</td></tr>`).join("")}
-      </tbody></table>
+      </tbody></table>` : ""}
+      <p class="muted">${esc(b.scheduleNote)}</p>
     </div>
   </div>
 </div>`,
@@ -254,7 +258,8 @@ page({
   current: "promociones",
   body: `<div class="container page">
   ${titleBlock("Promociones")}
-  <div class="grid grid--3">${PROMOTIONS.map((p) => promoCard(p, 2)).join("")}</div>
+  ${PROMOTIONS.length ? `<div class="grid grid--3">${PROMOTIONS.map((p) => promoCard(p, 2)).join("")}</div>` : empty("Por ahora no hay promociones publicadas", "Síguenos en Facebook e Instagram para enterarte de las nuevas promociones.")}
+  <div class="actions" style="margin-top:24px"><a class="btn" href="${SITE.facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a><a class="btn btn--outline" href="${SITE.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a></div>
 </div>`,
 });
 
@@ -290,14 +295,14 @@ page({
   body: `<section class="hero hero--short" data-surface="carbon">
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="container hero__inner">
-    <div class="anim-up">${eyebrow("Nuestra historia")}</div>
-    <h1 class="hero__title anim-up" style="--d:90ms">De la parrilla del barrio a tu mesa</h1>
+    <div class="anim-up">${eyebrow("Quiénes somos")}</div>
+    <h1 class="hero__title anim-up" style="--d:90ms">Tacos de Durango, a la parrilla y al trompo</h1>
   </div>
 </section>
 <div class="container section-stack">
   <div class="grid grid--about">
     <div class="prose reveal">${HISTORY.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
-    <div class="reveal">${photo({ label: "Foto histórica de El Plomazo pendiente", tone: 2, className: "about-photo" })}</div>
+    <div class="reveal">${photo({ image: "images/portada.webp", label: "Trompo de pastor y platillos de Taquería El Plomazo", className: "about-photo" })}</div>
   </div>
   <div class="actions reveal"><a class="btn" href="menu.html">Ver el menú</a><a class="btn btn--outline" href="sucursales.html">Encontrar sucursal</a></div>
 </div>`,
@@ -311,12 +316,13 @@ page({
   current: "contacto",
   body: `<div class="container page">
   ${titleBlock("Contacto")}
-  <p class="lead muted anim-up" style="--d:80ms">La forma más rápida de contactarnos es directo: llama, escríbenos por WhatsApp o encuentra la sucursal más cercana.</p>
+  <p class="lead muted anim-up" style="--d:80ms">La forma más rápida de contactarnos es directo: llama, escríbenos por redes o encuentra la sucursal más cercana. También cotizamos taquizas para eventos.</p>
   <div class="actions anim-up" style="--d:160ms">
     <a class="btn btn--call" href="tel:${SITE.phone}">Llamar</a>
-    <a class="btn btn--wa" href="${waLink(SITE.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    ${SITE.whatsapp ? `<a class="btn btn--wa" href="${waLink(SITE.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>` : ""}
     <a class="btn btn--outline" href="sucursales.html">Ver sucursales</a>
-    <a class="btn btn--ghost" href="mailto:${SITE.email}">Escríbenos</a>
+    <a class="btn btn--ghost" href="${SITE.facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="btn btn--ghost" href="${SITE.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a>
   </div>
 </div>`,
 });

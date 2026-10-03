@@ -1,0 +1,492 @@
+[
+ {
+  "cat": "tacos",
+  "name": "Taco de asada",
+  "price": 22,
+  "description": "Taco en tortilla de maíz con carne asada al carbón, verdura de temporada y salsa de la casa.",
+  "image": "images/menu/taco-de-asada.webp"
+ },
+ {
+  "cat": "tacos",
+  "name": "Taco al pastor",
+  "price": 22,
+  "description": "Taco en tortilla de maíz con carne al pastor adobada, verdura de temporada y salsa de la casa.",
+  "image": "images/menu/taco-al-pastor.webp"
+ },
+ {
+  "cat": "tacos",
+  "name": "Taco de chorizo",
+  "price": 22,
+  "description": "Taco en tortilla de maíz con chorizo de la casa, verdura de temporada y salsa de la casa.",
+  "image": "images/menu/taco-de-chorizo.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos bistek encebollado",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con chuck roll de res y cebolla asada, tamaño a elegir.",
+  "image": "images/menu/tacos-bistek-encebollado.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos chorizo",
+  "price": 117,
+  "description": "Orden de 3 tacos de chorizo preparado en casa.",
+  "image": "images/menu/tacos-chorizo.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos chuleta",
+  "price": 118,
+  "description": "Orden de 3 tacos de lomo de puerco picada y sazonada a la plancha.",
+  "image": "images/menu/tacos-chuleta.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos costilla",
+  "price": 117,
+  "description": "Orden de 3 tacos con corte 7 res picada y sazonada a la plancha.",
+  "image": "images/menu/tacos-costilla.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos bistek",
+  "price": 117,
+  "description": "Orden de 3 tacos chuck roll de res picada y sazonada a la plancha.",
+  "image": "images/menu/tacos-bistek.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos asada",
+  "price": 149.5,
+  "description": "Orden de 5 tacos de los tradicionales con cebolla, cilantro, salsa, piña, tortilla de maíz, lomo de puerco.",
+  "image": "images/menu/tacos-asada.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Cebollas asadas",
+  "price": 45.5,
+  "description": "Una orden de cebollas enteras, preparadas al carbón o a la parrilla.",
+  "image": "images/menu/cebollas-asadas.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos de champiñones",
+  "price": 117,
+  "description": "Orden de 3 tacos de champiñones preparados.",
+  "image": "images/menu/tacos-de-champinones.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Tacos chuleta con tocino",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con tacos de lomo de puerco y tocino, tamaño a elegir.",
+  "image": "images/menu/tacos-chuleta-con-tocino.webp"
+ },
+ {
+  "cat": "tradicionales",
+  "name": "Chuleta con tocino",
+  "price": 156,
+  "description": "Lomo de puerco con tocino, porción personal.",
+  "image": "images/menu/chuleta-con-tocino.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "La partida",
+  "price": 180,
+  "description": "Carne al pastor, dos tortillas de harina con queso fundido, porción personal.",
+  "image": "images/menu/la-partida.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Tacos de alambre",
+  "price": 180,
+  "description": "Taco en tortilla de maíz con chuleta de puerco, tocino, cebolla, chile poblano queso, tamaño a elegir.",
+  "image": "images/menu/tacos-de-alambre.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "La sonrisa",
+  "price": 136.6,
+  "description": "Tortilla de harina con queso fundido, costilla encebollada y champiñones, porción personal.",
+  "image": "images/menu/la-sonrisa.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Choriqueso",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con chorizo de la casa y queso asadero, tamaño a elegir.",
+  "image": "images/menu/choriqueso.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Volcanes al pastor o asada",
+  "price": 104,
+  "description": "Tortilla de maíz dorada con queso fundido y carne a elegir.",
+  "image": "images/menu/volcanes-al-pastor-o-asada.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Bistek con champiñones y queso",
+  "price": 143.65,
+  "description": "Taco en tortilla de maíz con bistek de res, champiñones y queso de asadero, tamaño a elegir.",
+  "image": "images/menu/bistek-con-champinones-y-queso.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Submarino",
+  "price": 188.5,
+  "description": "Carne a elegir envuelta en chicharrón de queso.",
+  "image": "images/menu/submarino.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Tacos piratas",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con pulpa de res y queso, tamaño a elegir.",
+  "image": "images/menu/tacos-piratas.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Chuleta con queso",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con lomo de puerco y queso, tamaño a elegir.",
+  "image": "images/menu/chuleta-con-queso.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Quesadilla de tortillas de preferencia",
+  "price": 45.5,
+  "description": "Quesadilla con tortilla a elegir, porción individual.",
+  "image": "images/menu/quesadilla-de-tortillas-de-preferencia.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Chuleta especial",
+  "price": 162.5,
+  "description": "Lomo de puerco, dos tortillas de harina con queso fundido.",
+  "image": "images/menu/chuleta-especial.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Piratas",
+  "price": 156,
+  "description": "Piratas con pulpa de res de primera y queso.",
+  "image": "images/menu/piratas.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Choriqueso",
+  "price": 156,
+  "description": "Chorizo hecho en casa con queso asadero.",
+  "image": "images/menu/choriqueso.webp"
+ },
+ {
+  "cat": "combinaciones-con-queso",
+  "name": "Alambre",
+  "price": 180,
+  "description": "Chuleta de puerco con tocino, cebolla, chile poblano, queso.",
+  "image": "images/menu/alambre.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Arrachera marinada",
+  "price": 364,
+  "description": "Arrachera marinada acompañado con salchicha para asar, aguacate, tomate, cebolla asada, frijoles charros, porción a elegir.",
+  "image": "images/menu/arrachera-marinada.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Tacos alambre con arrachera",
+  "price": 221,
+  "description": "Taco en tortilla de maíz con arrachera, cebolla, chile morrón, tocino, queso, tamaño a elegir.",
+  "image": "images/menu/tacos-alambre-con-arrachera.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Fua",
+  "price": 214.5,
+  "description": "Carne al pastor, carne de asada, pico de gallo, jamón, aguacate y chile toreado, acompañado de tostadas.",
+  "image": "images/menu/fua.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Tacos de arrachera marinada",
+  "price": 227.5,
+  "description": "Orden de 5 tacos con arrachera marinada, aguacate, tomate, cebolla asada y frijoles charros.",
+  "image": "images/menu/tacos-de-arrachera-marinada.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Tacos arrachera marinada con queso",
+  "price": 221,
+  "description": "Taco en tortilla de maíz con queso asadero y carne de arrachera, tamaño a elegir.",
+  "image": "images/menu/tacos-arrachera-marinada-con-queso.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El pionero",
+  "price": 118.3,
+  "description": "Taco en tortilla de maíz con bistek encebollado, tocino, champiñones con queso, tamaño a elegir.",
+  "image": "images/menu/el-pionero.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El fogón suizo",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con bistek de res, carne al pastor, champiñones y chile jalapeño, queso, tamaño a elegir.",
+  "image": "images/menu/el-fogon-suizo.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Que me ves",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con chuleta, tocino, jamón, chile morrón, cebolla y queso gratinado, tamaño a elegir.",
+  "image": "images/menu/que-me-ves.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El hawaiano",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con rajas, champiñones, piña en almíbar, queso, tamaño a elegir.",
+  "image": "images/menu/el-hawaiano.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "La emboscada",
+  "price": 143.65,
+  "description": "Taco en tortilla de maíz con chuleta, tocino, champiñones, chile poblano, cebolla, jamón, salchicha queso, tamaño a elegir.",
+  "image": "images/menu/la-emboscada.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El plomazo",
+  "price": 105,
+  "description": "Taco en tortilla de maíz con carne al pastor, champiñones, queso, tamaño a elegir.",
+  "image": "images/menu/el-plomazo.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "La suiza",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con carne al pastor, queso asadero, tamaño a elegir.",
+  "image": "images/menu/la-suiza.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Bistek a la mexicana",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con pulpa de res, chile jalapeño, tomates y cebolla, tamaño a elegir.",
+  "image": "images/menu/bistek-a-la-mexicana.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El plomazo",
+  "price": 105,
+  "description": "Carne al pastor con champiñones y queso, porción personal.",
+  "image": "images/menu/el-plomazo.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "La suiza",
+  "price": 156,
+  "description": "Carne al pastor y queso asadero, porción personal.",
+  "image": "images/menu/la-suiza.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "La emboscada",
+  "price": 156,
+  "description": "Chuleta, tocino, champinones, chile poblano, cebolla, jamon, salchicha y queso, porción personal.",
+  "image": "images/menu/la-emboscada.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El hawaiano",
+  "price": 156,
+  "description": "Rajas con champiñones, piña en almibar y queso, porción personal.",
+  "image": "images/menu/el-hawaiano.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Arrachera marinada con queso",
+  "price": 204,
+  "description": "Queso asadero y arrachera, porción personal.",
+  "image": "images/menu/arrachera-marinada-con-queso.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "Alambre con arrachera",
+  "price": 204,
+  "description": "Alambre con arrachera, cebolla, chile, morrón, tocino, queso.",
+  "image": "images/menu/alambre-con-arrachera.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Sincronizada",
+  "price": 115,
+  "description": "Doble tortillas de harina, queso, jamón y aguacate, porción individual.",
+  "image": "images/menu/sincronizada.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Papa asada con queso",
+  "price": 214.5,
+  "description": "Papa asada con mantequilla, queso fundido y trozos de tocino.",
+  "image": "images/menu/papa-asada-con-queso.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Papa queso y carne asada",
+  "price": 214.5,
+  "description": "Papa asada con mantequilla, queso y carne asada.",
+  "image": "images/menu/papa-queso-y-carne-asada.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Las doradas",
+  "price": 104,
+  "description": "Orden de 3 tortillas de maíz rellenas de queso asadero, doradas al comal.",
+  "image": "images/menu/las-doradas.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Burrito carne asada",
+  "price": 97.5,
+  "description": "Burrito relleno de carne asada.",
+  "image": "images/menu/burrito-carne-asada.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Burrito suizo carne asada",
+  "price": 104,
+  "description": "Carne asada envuelta en tortilla y gratinada con queso fundido",
+  "image": "images/menu/burrito-suizo-carne-asada.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Burrito pastor",
+  "price": 77.35,
+  "description": "Burrito de carne al pastor, marinado.",
+  "image": "images/menu/burrito-pastor.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Burrito suizo pastor",
+  "price": 97.5,
+  "description": "Burrito de carne al pastor, queso fundido.",
+  "image": "images/menu/burrito-suizo-pastor.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Champiqueso",
+  "price": 118.3,
+  "description": "Taco en tortilla de maíz con queso fundido y champiñones, tamaño a elegir.",
+  "image": "images/menu/champiqueso.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Costilla con queso",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con corte de res y queso, tamaño a elegir.",
+  "image": "images/menu/costilla-con-queso.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "La granada",
+  "price": 117,
+  "description": "Salchicha para asar, queso de asadero, chile toreado y tortilla de harina, porción individual.",
+  "image": "images/menu/la-granada.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "La araña",
+  "price": 208,
+  "description": "Cebolla asada rellena con carne a elegir y queso fundido en tortilla de harina.",
+  "image": "images/menu/la-arana.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Gringa al gusto",
+  "price": 130,
+  "description": "Tortilla de harina con queso, carne a elegir, porción individual.",
+  "image": "images/menu/gringa-al-gusto.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Rajas con queso",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con queso asadero y rajas de chile poblano, tamaño a elegir.",
+  "image": "images/menu/rajas-con-queso.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Queso fundido",
+  "price": 110.5,
+  "description": "Orden de tres tacos con queso de asadero fundido.",
+  "image": "images/menu/queso-fundido.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Bistek de tocino",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con pulpa de res combinada con tocino, tamaño a elegir.",
+  "image": "images/menu/bistek-de-tocino.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Bistek con champiñones",
+  "price": 169,
+  "description": "Taco en tortilla de maíz con pulpa de res combinada con champiñones, tamaño a elegir.",
+  "image": "images/menu/bistek-con-champinones.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Papa asada con mantequilla y queso",
+  "price": 117,
+  "description": "Papa asada con mantequilla y capa de queso fundido.",
+  "image": "images/menu/papa-asada-con-mantequilla-y-queso.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Papa asada con mantequilla",
+  "price": 71.5,
+  "description": "Papa horneada bañada en mantequilla derretida.",
+  "image": "images/menu/papa-asada-con-mantequilla.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Rajas con queso",
+  "price": 156,
+  "description": "Queso asadero y rajas de chile poblano, porción personal.",
+  "image": "images/menu/rajas-con-queso.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Champiqueso",
+  "price": 156,
+  "description": "Queso fundido y champinones, porción personal.",
+  "image": "images/menu/champiqueso.webp"
+ },
+ {
+  "cat": "hamburguesas",
+  "name": "Hamburguesa tradicional",
+  "price": 100,
+  "description": "Hamburguesa de res de la casa.",
+  "image": "images/menu/hamburguesa-tradicional.webp"
+ },
+ {
+  "cat": "hamburguesas",
+  "name": "Hamburguesa vegetariana",
+  "price": 100,
+  "description": "Hamburguesa con champiñones, rajas de chile poblano y piña en almíbar.",
+  "image": "images/menu/hamburguesa-vegetariana.webp"
+ },
+ {
+  "cat": "hamburguesas",
+  "name": "Hamburguesa al pastor",
+  "price": 100,
+  "description": "Hamburguesa con carne de lomo de cerdo al pastor.",
+  "image": "images/menu/hamburguesa-al-pastor.webp"
+ }
+]

@@ -15,7 +15,7 @@
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 <header class="site-header" data-surface="carbon">
   <div class="container site-header__bar">
-    <a href="index.html" class="brand"><span class="brand__mark">P</span>El Plomazo</a>
+    <a href="index.html" class="brand"><img class="brand__logo" src="images/logo.webp" alt="" width="40" height="40">El Plomazo</a>
     <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html" aria-current="page">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
       <span class="sr-only">Abrir menú</span>
@@ -29,17 +29,21 @@
   <h1 class="page-title anim-up">Galería</h1>
   <nav class="pills" aria-label="Categorías de la galería" data-filter-group="gallery">
     <button type="button" class="pill is-active" data-filter="all">Todas</button>
-    <button type="button" class="pill" data-filter="Platillos">Platillos</button><button type="button" class="pill" data-filter="Ambiente">Ambiente</button><button type="button" class="pill" data-filter="Sucursales">Sucursales</button>
+    <button type="button" class="pill" data-filter="Local">Local</button><button type="button" class="pill" data-filter="Cortes">Cortes</button><button type="button" class="pill" data-filter="Con queso">Con queso</button><button type="button" class="pill" data-filter="Tacos">Tacos</button><button type="button" class="pill" data-filter="Antojitos">Antojitos</button><button type="button" class="pill" data-filter="Hamburguesas">Hamburguesas</button>
   </nav>
   <div class="grid grid--gallery" id="gallery">
-    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Orden de tacos al pastor (foto pendiente)" aria-label="Ampliar: Orden de tacos al pastor (foto pendiente)"><div class="ph tone-1 gallery-item__photo" role="img" aria-label="Orden de tacos al pastor (foto pendiente)"><span class="ph__label">Orden de tacos al pastor (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Gringa con queso derretido (foto pendiente)" aria-label="Ampliar: Gringa con queso derretido (foto pendiente)"><div class="ph tone-4 gallery-item__photo" role="img" aria-label="Gringa con queso derretido (foto pendiente)"><span class="ph__label">Gringa con queso derretido (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Ambiente" data-alt="Interior de la taquería (foto pendiente)" aria-label="Ampliar: Interior de la taquería (foto pendiente)"><div class="ph tone-3 gallery-item__photo" role="img" aria-label="Interior de la taquería (foto pendiente)"><span class="ph__label">Interior de la taquería (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Quesabirria con consomé (foto pendiente)" aria-label="Ampliar: Quesabirria con consomé (foto pendiente)"><div class="ph tone-2 gallery-item__photo" role="img" aria-label="Quesabirria con consomé (foto pendiente)"><span class="ph__label">Quesabirria con consomé (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Sucursales" data-alt="Fachada de la sucursal Centro (foto pendiente)" aria-label="Ampliar: Fachada de la sucursal Centro (foto pendiente)"><div class="ph tone-5 gallery-item__photo" role="img" aria-label="Fachada de la sucursal Centro (foto pendiente)"><span class="ph__label">Fachada de la sucursal Centro (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Ambiente" data-alt="Trompo al pastor girando (foto pendiente)" aria-label="Ampliar: Trompo al pastor girando (foto pendiente)"><div class="ph tone-6 gallery-item__photo" role="img" aria-label="Trompo al pastor girando (foto pendiente)"><span class="ph__label">Trompo al pastor girando (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Aguas frescas de la casa (foto pendiente)" aria-label="Ampliar: Aguas frescas de la casa (foto pendiente)"><div class="ph tone-3 gallery-item__photo" role="img" aria-label="Aguas frescas de la casa (foto pendiente)"><span class="ph__label">Aguas frescas de la casa (foto pendiente)</span></div></button>
-    <button type="button" class="gallery-item reveal" data-category="Sucursales" data-alt="Terraza de la sucursal Poniente (foto pendiente)" aria-label="Ampliar: Terraza de la sucursal Poniente (foto pendiente)"><div class="ph tone-2 gallery-item__photo" role="img" aria-label="Terraza de la sucursal Poniente (foto pendiente)"><span class="ph__label">Terraza de la sucursal Poniente (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Local" data-alt="Trompo de pastor y platillos de Taquería El Plomazo" aria-label="Ampliar: Trompo de pastor y platillos de Taquería El Plomazo"><img class="photo gallery-item__photo" src="images/portada.webp" alt="Trompo de pastor y platillos de Taquería El Plomazo" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Cortes" data-alt="Arrachera marinada" aria-label="Ampliar: Arrachera marinada"><img class="photo gallery-item__photo" src="images/menu/arrachera-marinada.webp" alt="Arrachera marinada" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Cortes" data-alt="Fua: pastor, asada, jamón y aguacate" aria-label="Ampliar: Fua: pastor, asada, jamón y aguacate"><img class="photo gallery-item__photo" src="images/menu/fua.webp" alt="Fua: pastor, asada, jamón y aguacate" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Con queso" data-alt="La partida: pastor con queso fundido en tortilla de harina" aria-label="Ampliar: La partida: pastor con queso fundido en tortilla de harina"><img class="photo gallery-item__photo" src="images/menu/la-partida.webp" alt="La partida: pastor con queso fundido en tortilla de harina" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Con queso" data-alt="Chuleta con queso" aria-label="Ampliar: Chuleta con queso"><img class="photo gallery-item__photo" src="images/menu/chuleta-con-queso.webp" alt="Chuleta con queso" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Tacos" data-alt="El pionero: bistek, tocino y champiñones con queso" aria-label="Ampliar: El pionero: bistek, tocino y champiñones con queso"><img class="photo gallery-item__photo" src="images/menu/el-pionero.webp" alt="El pionero: bistek, tocino y champiñones con queso" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Tacos" data-alt="Bistek a la mexicana" aria-label="Ampliar: Bistek a la mexicana"><img class="photo gallery-item__photo" src="images/menu/bistek-a-la-mexicana.webp" alt="Bistek a la mexicana" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Antojitos" data-alt="Burrito de carne asada" aria-label="Ampliar: Burrito de carne asada"><img class="photo gallery-item__photo" src="images/menu/burrito-carne-asada.webp" alt="Burrito de carne asada" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Antojitos" data-alt="Burrito de pastor" aria-label="Ampliar: Burrito de pastor"><img class="photo gallery-item__photo" src="images/menu/burrito-pastor.webp" alt="Burrito de pastor" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Hamburguesas" data-alt="Hamburguesa tradicional de res" aria-label="Ampliar: Hamburguesa tradicional de res"><img class="photo gallery-item__photo" src="images/menu/hamburguesa-tradicional.webp" alt="Hamburguesa tradicional de res" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Hamburguesas" data-alt="Hamburguesa al pastor" aria-label="Ampliar: Hamburguesa al pastor"><img class="photo gallery-item__photo" src="images/menu/hamburguesa-al-pastor.webp" alt="Hamburguesa al pastor" loading="lazy"></button>
+    <button type="button" class="gallery-item reveal" data-category="Cortes" data-alt="Arrachera marinada con queso" aria-label="Ampliar: Arrachera marinada con queso"><img class="photo gallery-item__photo" src="images/menu/arrachera-marinada-con-queso.webp" alt="Arrachera marinada con queso" loading="lazy"></button>
   </div>
 </div>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
@@ -51,14 +55,14 @@
   <div class="container site-footer__grid">
     <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
     <div><h2>Contacto</h2><ul>
-      <li><a href="tel:8100000000">(81) 0000-0000 (ejemplo)</a></li>
-      <li><a href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      <li><a href="tel:6181534075">618 153 4075</a></li>
       
-      
+      <li><a href="https://www.instagram.com/taqueriaelplomazo/">Instagram</a></li>
+      <li><a href="https://www.facebook.com/taqueriaelplomazo/">Facebook</a></li>
     </ul></div>
     <div><h2>Legal</h2><ul><li><a href="privacidad.html">Aviso de privacidad</a></li></ul></div>
   </div>
-  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo. Contenido de ejemplo.</p></div>
+  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo · Durango, Dgo.</p></div>
 </footer>
 <script src="script.js" defer></script>
 </body>
