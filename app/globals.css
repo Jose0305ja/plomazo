@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+[data-surface="carbon"]:focus-visible,
+[data-surface="carbon"] :focus-visible {
+  outline-color: var(--color-corn);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--spacing-4);
+  top: var(--spacing-4);
+  background: var(--color-carbon);
+  color: var(--color-on-carbon);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+  transform: translateY(-150%);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@keyframes stagger-in-kf {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.stagger-in {
+  animation: stagger-in-kf 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.stagger-in:nth-child(2) { animation-delay: 30ms; }
+.stagger-in:nth-child(3) { animation-delay: 60ms; }
+.stagger-in:nth-child(4) { animation-delay: 90ms; }
+
+.ph-photo {
+  background: linear-gradient(135deg, var(--color-carbon-raised), var(--color-carbon));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
