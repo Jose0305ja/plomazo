@@ -488,5 +488,12 @@
   "price": 100,
   "description": "Hamburguesa con carne de lomo de cerdo al pastor.",
   "image": "images/menu/hamburguesa-al-pastor.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
+  "name": "Frijoles charros",
+  "price": 117,
+  "description": "Frijoles caldosos preparados al estilo norteño con tocino, jamón y salchicha.",
+  "image": "images/menu/frijoles-charros.webp"
  }
 ]

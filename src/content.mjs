@@ -40,9 +40,18 @@ const FEATURED = new Set([
   "El pionero", "Hamburguesa tradicional",
 ]);
 
-export const PRODUCTS = JSON.parse(readFileSync(new URL("./products.json", import.meta.url), "utf8")).map(
-  (p) => ({ ...p, featured: FEATURED.has(p.name) }),
+const RAW = JSON.parse(readFileSync(new URL("./products.json", import.meta.url), "utf8"));
+const norm = (t) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const dupes = new Set(
+  RAW.map((p) => norm(p.name)).filter((n, i, a) => a.indexOf(n) !== i),
 );
+// Misma receta en dos presentaciones (taco o porción personal): se distingue en el nombre.
+export const PRODUCTS = RAW.map((p) => {
+  const suffix = dupes.has(norm(p.name))
+    ? /porci[oó]n personal/i.test(p.description) ? " (porción personal)" : " (taco)"
+    : "";
+  return { ...p, name: p.name + suffix, featured: FEATURED.has(p.name) };
+});
 
 // Sin promociones propias confirmadas todavía.
 export const PROMOTIONS = [];
@@ -54,36 +63,52 @@ export const SERVICES = [
 const BRANCH_HOURS = "Horario por confirmar con el restaurante.";
 const gmaps = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
+const EVERY_DAY = (h) => ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].map((d) => [d, h]);
+
+// `photo`: pon aquí la foto real de la fachada/local (images/sucursales/<slug>.jpg).
+// Mientras tanto se muestra una foto de platillos del restaurante.
 export const BRANCHES = [
   {
     slug: "primo-de-verdad",
     name: "Primo de Verdad",
+    zone: "Valle del Sur",
     address: "Primo de Verdad 601, Valle del Sur, 34136 Durango, Dgo.",
     phone: "6181534075",
     whatsapp: "",
-    mapsUrl: gmaps("Taquería El Plomazo, Primo de Verdad 601, Durango"),
-    schedule: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].map((d) => [d, "17:00 – 23:30"]),
+    mapQuery: "Taquería El Plomazo, Primo de Verdad 601, Valle del Sur, Durango",
+    mapsUrl: gmaps("Taquería El Plomazo, Primo de Verdad 601, Valle del Sur, Durango"),
+    photo: "images/menu/arrachera-marinada.webp",
+    photoAlt: "Arrachera marinada de Taquería El Plomazo",
+    schedule: EVERY_DAY("17:00 – 23:30"),
     scheduleNote: "Horario publicado en Rappi; confirmar con el restaurante.",
   },
   {
     slug: "francisco-villa",
     name: "Blvd. Francisco Villa",
+    zone: "Esq. Calle Lima",
     address: "Blvd. Francisco Villa esq. Calle Lima 101, Durango, Dgo.",
     phone: "6181534075",
     whatsapp: "",
-    mapsUrl: gmaps("Taquería El Plomazo, Blvd. Francisco Villa 101, Durango"),
+    mapQuery: "Taquería El Plomazo, Blvd. Francisco Villa y Calle Lima 101, Durango",
+    mapsUrl: gmaps("Taquería El Plomazo, Blvd. Francisco Villa y Calle Lima 101, Durango"),
+    photo: "images/menu/fua.webp",
+    photoAlt: "Fua de Taquería El Plomazo",
     schedule: null,
     scheduleNote: BRANCH_HOURS,
   },
   {
     slug: "guadiana",
     name: "Blvd. Guadiana",
-    address: "Blvd. Guadiana esq. Calle 17 de Septiembre, Durango, Dgo.",
+    zone: "Tierra y Libertad",
+    address: "Calle 17 de Septiembre 150, Tierra y Libertad, 34127 Durango, Dgo. (esq. Blvd. Guadiana)",
     phone: "6181534075",
     whatsapp: "",
-    mapsUrl: gmaps("Taquería El Plomazo, Blvd. Guadiana y 17 de Septiembre, Durango"),
-    schedule: null,
-    scheduleNote: BRANCH_HOURS,
+    mapQuery: "Taquería El Plomazo, Calle 17 de Septiembre 150, Tierra y Libertad, Durango",
+    mapsUrl: gmaps("Taquería El Plomazo, Calle 17 de Septiembre 150, Tierra y Libertad, Durango"),
+    photo: "images/menu/la-partida.webp",
+    photoAlt: "La partida de Taquería El Plomazo",
+    schedule: EVERY_DAY("17:00 – 23:59"),
+    scheduleNote: "Horario publicado en Rappi; confirmar con el restaurante.",
   },
 ];
 

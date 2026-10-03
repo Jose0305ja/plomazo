@@ -75,7 +75,7 @@
   /* Buscador de sucursales */
   var search = $("#branch-search");
   if (search) {
-    var rows = $$("#branch-list .branch-row");
+    var rows = $$("#branch-list [data-search]");
     var empty = $("#branch-empty");
     search.addEventListener("input", function () {
       var q = search.value.trim().toLowerCase();

@@ -248,6 +248,26 @@ ul { margin: 0; padding: 0; list-style: none; }
 .service p { max-width: 38rem; margin: 0; font-size: 1.125rem; }
 .notice + .pills, .notice { margin-bottom: 16px; }
 
+/* ---------- Tarjetas de sucursal y mapas ---------- */
+.branch-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--warm-white); transition: transform 300ms var(--ease), box-shadow 300ms var(--ease); }
+.branch-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.branch-card[hidden] { display: none; }
+.branch-card__photo { display: block; aspect-ratio: 16 / 9; overflow: hidden; }
+.branch-card__img { transition: transform 600ms var(--ease); }
+.branch-card:hover .branch-card__img { transform: scale(1.06); }
+.branch-card__body { padding: 16px 16px 12px; }
+.branch-card__zone { margin: 0 0 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ember); }
+.branch-card__name { margin-bottom: 6px; font-size: 1.25rem; font-weight: 800; }
+.branch-card__name a { color: var(--ink); text-decoration: none; }
+.branch-card__name a:hover { color: var(--ember); }
+.branch-card__addr { margin: 0 0 6px; font-size: 0.875rem; }
+.branch-card__hours { margin: 0; font-size: 0.8125rem; font-weight: 700; color: var(--copper); }
+.branch-card__actions { padding: 12px 16px 16px; margin-top: auto; }
+.map { display: block; width: 100%; border: 0; border-block: 1px solid var(--border); background: var(--border); filter: saturate(0.9) contrast(1.02); }
+.detail-photo { margin: 8px 0 28px; overflow: hidden; border-radius: var(--radius-md); aspect-ratio: 21 / 9; max-height: 320px; }
+.detail-map { margin-top: 32px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-md); }
+.detail-map .map { border: 0; }
+
 /* ---------- Pie ---------- */
 .site-footer { background: var(--carbon); padding: 40px 0 32px; font-size: 0.875rem; color: var(--muted-on-carbon); }
 .site-footer__grid { display: grid; gap: 24px; }

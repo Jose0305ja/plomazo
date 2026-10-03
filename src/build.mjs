@@ -116,6 +116,28 @@ function branchRow(b, level = 2) {
 </div>`;
 }
 
+const mapEmbed = (b, height = 220) =>
+  `<iframe class="map" style="height:${height}px" title="Mapa de la sucursal ${esc(b.name)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(b.mapQuery)}&hl=es&z=16&output=embed"></iframe>`;
+
+function branchCard(b) {
+  const hours = b.schedule ? b.schedule[0][1] : null;
+  return `<article class="branch-card reveal" data-search="${esc((b.name + " " + b.zone + " " + b.address).toLowerCase())}">
+  <a class="branch-card__photo" href="sucursal-${b.slug}.html" tabindex="-1" aria-hidden="true">${photo({ image: b.photo, label: b.photoAlt, className: "branch-card__img" })}</a>
+  <div class="branch-card__body">
+    <p class="branch-card__zone">${esc(b.zone)}</p>
+    <h2 class="branch-card__name"><a href="sucursal-${b.slug}.html">${esc(b.name)}</a></h2>
+    <p class="muted branch-card__addr">${esc(b.address)}</p>
+    <p class="branch-card__hours">${hours ? `Todos los días · ${hours}` : "Horario por confirmar"}</p>
+  </div>
+  ${mapEmbed(b, 200)}
+  <div class="actions branch-card__actions">
+    <a class="btn btn--call btn--sm" href="tel:${b.phone}">Llamar</a>
+    ${b.whatsapp ? `<a class="btn btn--wa btn--sm" href="${waLink(b.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>` : ""}
+    <a class="btn btn--outline btn--sm" href="${b.mapsUrl}" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+  </div>
+</article>`;
+}
+
 function promoCard(p, level = 2) {
   const h = `h${level}`;
   return `<article class="promo reveal">
@@ -215,9 +237,9 @@ page({
   ${titleBlock("Sucursales")}
   <div class="search anim-up" style="--d:100ms">
     <label for="branch-search" class="sr-only">Buscar sucursal</label>
-    <input id="branch-search" type="search" placeholder="Buscar por nombre o colonia" autocomplete="off">
+    <input id="branch-search" type="search" placeholder="Buscar por nombre, calle o colonia" autocomplete="off">
   </div>
-  <div id="branch-list">${BRANCHES.map((b) => branchRow(b, 2)).join("")}</div>
+  <div id="branch-list" class="grid grid--3">${BRANCHES.map(branchCard).join("")}</div>
   <p id="branch-empty" class="muted" hidden>No encontramos sucursales con esa búsqueda.</p>
 </div>`,
 });
@@ -232,6 +254,7 @@ for (const b of BRANCHES) {
   <p class="crumb"><a href="sucursales.html">← Todas las sucursales</a></p>
   ${titleBlock(esc(b.name))}
   <p class="lead muted anim-up" style="--d:80ms">${esc(b.address)}</p>
+  <div class="detail-photo anim-up" style="--d:120ms">${photo({ image: b.photo, label: b.photoAlt, className: "detail-photo__img" })}</div>
   <div class="grid grid--split">
     <div class="actions anim-up" style="--d:160ms;align-content:flex-start">
       <a class="btn btn--call" href="tel:${b.phone}">Llamar</a>
@@ -246,6 +269,7 @@ for (const b of BRANCHES) {
       <p class="muted">${esc(b.scheduleNote)}</p>
     </div>
   </div>
+  <div class="detail-map anim-up" style="--d:300ms">${mapEmbed(b, 380)}</div>
 </div>`,
   });
 }
