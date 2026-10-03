@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menú — El Plomazo</title>
+<meta name="description" content="Consulta el menú completo de Taquerías El Plomazo por categoría.">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" data-surface="carbon">
+  <div class="container site-header__bar">
+    <a href="index.html" class="brand"><span class="brand__mark">P</span>El Plomazo</a>
+    <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html" aria-current="page">Menú</a><a href="sucursales.html">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="sr-only">Abrir menú</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Principal (móvil)" hidden><a href="index.html">Inicio</a><a href="menu.html" aria-current="page">Menú</a><a href="sucursales.html">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+</header>
+<main id="main-content">
+<div class="container page">
+  <h1 class="page-title anim-up">Menú</h1>
+  <nav class="pills pills--sticky" aria-label="Categorías del menú" data-filter-group="menu">
+    <button type="button" class="pill is-active" data-filter="all">Todas</button>
+    <button type="button" class="pill" data-filter="tacos">Tacos</button><button type="button" class="pill" data-filter="especialidades">Especialidades</button><button type="button" class="pill" data-filter="bebidas">Bebidas</button><button type="button" class="pill" data-filter="postres">Postres</button>
+  </nav>
+  <section class="menu-cat" id="tacos" data-category="tacos" aria-labelledby="h-tacos">
+    <div class="menu-cat__head reveal"><h2 id="h-tacos">Tacos</h2><div class="rule"></div></div>
+    <div class="grid grid--2 mb"><div class="feature reveal">
+  <div class="ph tone-1 feature__photo" role="img" aria-label="Foto de Taco al pastor pendiente"><span class="ph__label">Foto de Taco al pastor pendiente</span></div>
+  <div class="feature__shade"></div>
+  <div class="feature__text"><p class="feature__name">Taco al pastor</p><span class="price price--lg">$28</span></div>
+</div><div class="feature reveal">
+  <div class="ph tone-2 feature__photo" role="img" aria-label="Foto de Taco de bistec pendiente"><span class="ph__label">Foto de Taco de bistec pendiente</span></div>
+  <div class="feature__shade"></div>
+  <div class="feature__text"><p class="feature__name">Taco de bistec</p><span class="price price--lg">$30</span></div>
+</div></div>
+    <div class="product-row reveal">
+  <div class="ph tone-5 product-row__photo" role="img" aria-label="Foto de Taco de tripa pendiente"><span class="ph__label">Foto de Taco de tripa pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Taco de tripa</p><span class="price">$32</span></div>
+    <p class="product-row__desc">Crujiente, con limón y salsa de la casa (ejemplo).</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <div class="ph tone-3 product-row__photo" role="img" aria-label="Foto de Taco de lengua pendiente"><span class="ph__label">Foto de Taco de lengua pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Taco de lengua</p><span class="price">$38</span></div>
+    <p class="product-row__desc">Suave, con cilantro y cebolla (ejemplo).</p>
+    
+  </div>
+</div>
+  </section>
+  <section class="menu-cat" id="especialidades" data-category="especialidades" aria-labelledby="h-especialidades">
+    <div class="menu-cat__head reveal"><h2 id="h-especialidades">Especialidades</h2><div class="rule"></div></div>
+    <div class="grid grid--2 mb"><div class="feature reveal">
+  <div class="ph tone-4 feature__photo" role="img" aria-label="Foto de Gringa pendiente"><span class="ph__label">Foto de Gringa pendiente</span></div>
+  <div class="feature__shade"></div>
+  <div class="feature__text"><p class="feature__name">Gringa</p><span class="price price--lg">$65</span></div>
+</div></div>
+    <div class="product-row reveal">
+  <div class="ph tone-2 product-row__photo" role="img" aria-label="Foto de Quesabirria pendiente"><span class="ph__label">Foto de Quesabirria pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Quesabirria</p><span class="price">$42</span></div>
+    <p class="product-row__desc">Con consomé para acompañar (ejemplo).</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <div class="ph tone-6 product-row__photo" role="img" aria-label="Foto de Campechano pendiente"><span class="ph__label">Foto de Campechano pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Campechano</p><span class="price">$58</span></div>
+    <p class="product-row__desc">Bistec y chorizo sobre tortilla de maíz (ejemplo).</p>
+    
+  </div>
+</div><div class="product-row reveal is-unavailable">
+  <div class="ph tone-1 product-row__photo" role="img" aria-label="Foto de Costra de queso pendiente"><span class="ph__label">Foto de Costra de queso pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Costra de queso</p><span class="price">$70</span></div>
+    <p class="product-row__desc">Queso gratinado con carne a elegir (ejemplo).</p>
+    <span class="badge">Agotado</span>
+  </div>
+</div>
+  </section>
+  <section class="menu-cat" id="bebidas" data-category="bebidas" aria-labelledby="h-bebidas">
+    <div class="menu-cat__head reveal"><h2 id="h-bebidas">Bebidas</h2><div class="rule"></div></div>
+    
+    <div class="product-row reveal">
+  <div class="ph tone-3 product-row__photo" role="img" aria-label="Foto de Agua de horchata pendiente"><span class="ph__label">Foto de Agua de horchata pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Agua de horchata</p><span class="price">$25</span></div>
+    <p class="product-row__desc">Hecha en casa todos los días (ejemplo).</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <div class="ph tone-5 product-row__photo" role="img" aria-label="Foto de Agua de jamaica pendiente"><span class="ph__label">Foto de Agua de jamaica pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Agua de jamaica</p><span class="price">$25</span></div>
+    <p class="product-row__desc">Fresca y sin exceso de azúcar (ejemplo).</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <div class="ph tone-6 product-row__photo" role="img" aria-label="Foto de Refresco de botella pendiente"><span class="ph__label">Foto de Refresco de botella pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Refresco de botella</p><span class="price">$28</span></div>
+    <p class="product-row__desc">Variedad según disponibilidad (ejemplo).</p>
+    
+  </div>
+</div>
+  </section>
+  <section class="menu-cat" id="postres" data-category="postres" aria-labelledby="h-postres">
+    <div class="menu-cat__head reveal"><h2 id="h-postres">Postres</h2><div class="rule"></div></div>
+    
+    <div class="product-row reveal">
+  <div class="ph tone-4 product-row__photo" role="img" aria-label="Foto de Flan casero pendiente"><span class="ph__label">Foto de Flan casero pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Flan casero</p><span class="price">$35</span></div>
+    <p class="product-row__desc">Receta de la casa (ejemplo).</p>
+    
+  </div>
+</div><div class="product-row reveal">
+  <div class="ph tone-2 product-row__photo" role="img" aria-label="Foto de Arroz con leche pendiente"><span class="ph__label">Foto de Arroz con leche pendiente</span></div>
+  <div class="product-row__body">
+    <div class="product-row__head"><p class="product-row__name">Arroz con leche</p><span class="price">$30</span></div>
+    <p class="product-row__desc">Con canela espolvoreada (ejemplo).</p>
+    
+  </div>
+</div>
+  </section>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    <div><h2>Contacto</h2><ul>
+      <li><a href="tel:8100000000">(81) 0000-0000 (ejemplo)</a></li>
+      <li><a href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      
+      
+    </ul></div>
+    <div><h2>Legal</h2><ul><li><a href="privacidad.html">Aviso de privacidad</a></li></ul></div>
+  </div>
+  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo. Contenido de ejemplo.</p></div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

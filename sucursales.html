@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sucursales — El Plomazo</title>
+<meta name="description" content="Encuentra la sucursal de Taquerías El Plomazo más cercana a ti: dirección, teléfono, WhatsApp y cómo llegar.">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" data-surface="carbon">
+  <div class="container site-header__bar">
+    <a href="index.html" class="brand"><span class="brand__mark">P</span>El Plomazo</a>
+    <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html" aria-current="page">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="sr-only">Abrir menú</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Principal (móvil)" hidden><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html" aria-current="page">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+</header>
+<main id="main-content">
+<div class="container page">
+  <h1 class="page-title anim-up">Sucursales</h1>
+  <div class="search anim-up" style="--d:100ms">
+    <label for="branch-search" class="sr-only">Buscar sucursal</label>
+    <input id="branch-search" type="search" placeholder="Buscar por nombre o colonia" autocomplete="off">
+  </div>
+  <div id="branch-list"><div class="branch-row reveal" data-search="sucursal centro av. ejemplo 123, col. centro, monterrey (dirección de ejemplo)">
+  <div><h2 class="branch-row__name"><a href="sucursal-centro.html">Sucursal Centro (ejemplo)</a></h2><p class="muted">Av. Ejemplo 123, Col. Centro, Monterrey (dirección de ejemplo)</p></div>
+  <div class="actions">
+    <a class="btn btn--call btn--sm" href="tel:8100000000">Llamar</a>
+    <a class="btn btn--wa btn--sm" href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+  </div>
+</div><div class="branch-row reveal" data-search="sucursal poniente av. otro ejemplo 456, col. poniente, monterrey (dirección de ejemplo)">
+  <div><h2 class="branch-row__name"><a href="sucursal-poniente.html">Sucursal Poniente (ejemplo)</a></h2><p class="muted">Av. Otro Ejemplo 456, Col. Poniente, Monterrey (dirección de ejemplo)</p></div>
+  <div class="actions">
+    <a class="btn btn--call btn--sm" href="tel:8100000000">Llamar</a>
+    <a class="btn btn--wa btn--sm" href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+  </div>
+</div><div class="branch-row reveal" data-search="sucursal norte calle muestra 789, col. norte, monterrey (dirección de ejemplo)">
+  <div><h2 class="branch-row__name"><a href="sucursal-norte.html">Sucursal Norte (ejemplo)</a></h2><p class="muted">Calle Muestra 789, Col. Norte, Monterrey (dirección de ejemplo)</p></div>
+  <div class="actions">
+    <a class="btn btn--call btn--sm" href="tel:8100000000">Llamar</a>
+    
+    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+  </div>
+</div></div>
+  <p id="branch-empty" class="muted" hidden>No encontramos sucursales con esa búsqueda.</p>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    <div><h2>Contacto</h2><ul>
+      <li><a href="tel:8100000000">(81) 0000-0000 (ejemplo)</a></li>
+      <li><a href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      
+      
+    </ul></div>
+    <div><h2>Legal</h2><ul><li><a href="privacidad.html">Aviso de privacidad</a></li></ul></div>
+  </div>
+  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo. Contenido de ejemplo.</p></div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

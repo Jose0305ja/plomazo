@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galería — El Plomazo</title>
+<meta name="description" content="Fotografías de platillos, ambiente y sucursales de Taquerías El Plomazo.">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<header class="site-header" data-surface="carbon">
+  <div class="container site-header__bar">
+    <a href="index.html" class="brand"><span class="brand__mark">P</span>El Plomazo</a>
+    <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html" aria-current="page">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="sr-only">Abrir menú</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Principal (móvil)" hidden><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html" aria-current="page">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+</header>
+<main id="main-content">
+<div class="container page">
+  <h1 class="page-title anim-up">Galería</h1>
+  <nav class="pills" aria-label="Categorías de la galería" data-filter-group="gallery">
+    <button type="button" class="pill is-active" data-filter="all">Todas</button>
+    <button type="button" class="pill" data-filter="Platillos">Platillos</button><button type="button" class="pill" data-filter="Ambiente">Ambiente</button><button type="button" class="pill" data-filter="Sucursales">Sucursales</button>
+  </nav>
+  <div class="grid grid--gallery" id="gallery">
+    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Orden de tacos al pastor (foto pendiente)" aria-label="Ampliar: Orden de tacos al pastor (foto pendiente)"><div class="ph tone-1 gallery-item__photo" role="img" aria-label="Orden de tacos al pastor (foto pendiente)"><span class="ph__label">Orden de tacos al pastor (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Gringa con queso derretido (foto pendiente)" aria-label="Ampliar: Gringa con queso derretido (foto pendiente)"><div class="ph tone-4 gallery-item__photo" role="img" aria-label="Gringa con queso derretido (foto pendiente)"><span class="ph__label">Gringa con queso derretido (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Ambiente" data-alt="Interior de la taquería (foto pendiente)" aria-label="Ampliar: Interior de la taquería (foto pendiente)"><div class="ph tone-3 gallery-item__photo" role="img" aria-label="Interior de la taquería (foto pendiente)"><span class="ph__label">Interior de la taquería (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Quesabirria con consomé (foto pendiente)" aria-label="Ampliar: Quesabirria con consomé (foto pendiente)"><div class="ph tone-2 gallery-item__photo" role="img" aria-label="Quesabirria con consomé (foto pendiente)"><span class="ph__label">Quesabirria con consomé (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Sucursales" data-alt="Fachada de la sucursal Centro (foto pendiente)" aria-label="Ampliar: Fachada de la sucursal Centro (foto pendiente)"><div class="ph tone-5 gallery-item__photo" role="img" aria-label="Fachada de la sucursal Centro (foto pendiente)"><span class="ph__label">Fachada de la sucursal Centro (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Ambiente" data-alt="Trompo al pastor girando (foto pendiente)" aria-label="Ampliar: Trompo al pastor girando (foto pendiente)"><div class="ph tone-6 gallery-item__photo" role="img" aria-label="Trompo al pastor girando (foto pendiente)"><span class="ph__label">Trompo al pastor girando (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Platillos" data-alt="Aguas frescas de la casa (foto pendiente)" aria-label="Ampliar: Aguas frescas de la casa (foto pendiente)"><div class="ph tone-3 gallery-item__photo" role="img" aria-label="Aguas frescas de la casa (foto pendiente)"><span class="ph__label">Aguas frescas de la casa (foto pendiente)</span></div></button>
+    <button type="button" class="gallery-item reveal" data-category="Sucursales" data-alt="Terraza de la sucursal Poniente (foto pendiente)" aria-label="Ampliar: Terraza de la sucursal Poniente (foto pendiente)"><div class="ph tone-2 gallery-item__photo" role="img" aria-label="Terraza de la sucursal Poniente (foto pendiente)"><span class="ph__label">Terraza de la sucursal Poniente (foto pendiente)</span></div></button>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+  <button type="button" class="lightbox__close" aria-label="Cerrar">×</button>
+  <div class="lightbox__stage" id="lightbox-stage"></div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    <div><h2>Contacto</h2><ul>
+      <li><a href="tel:8100000000">(81) 0000-0000 (ejemplo)</a></li>
+      <li><a href="https://wa.me/528100000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      
+      
+    </ul></div>
+    <div><h2>Legal</h2><ul><li><a href="privacidad.html">Aviso de privacidad</a></li></ul></div>
+  </div>
+  <div class="container site-footer__legal"><p>© <span id="year">2026</span> Taquerías El Plomazo. Contenido de ejemplo.</p></div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
