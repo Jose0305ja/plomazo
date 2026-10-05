@@ -28,13 +28,19 @@
 <section class="hero" data-surface="carbon">
   <img class="hero__bg" src="images/portada.webp" alt="" aria-hidden="true">
   <div class="hero__glow" aria-hidden="true"></div>
-  <div class="container hero__inner">
-    <div class="anim-up" style="--d:0ms"><p class="eyebrow"><span aria-hidden="true"></span>Taquería · Durango, Dgo.</p></div>
-    <h1 class="hero__title anim-up" style="--d:90ms">Tacos que se ganan el barrio a la parrilla</h1>
-    <p class="hero__lead anim-up" style="--d:180ms">Tacos al pastor y de asada, alambres, arrachera, gringas y hamburguesas. Pasa a cualquiera de nuestras tres sucursales en Durango.</p>
-    <div class="actions anim-up" style="--d:270ms">
-      <a class="btn" href="menu.html">Ver el menú</a>
-      <a class="btn btn--outline-light" href="sucursales.html">Encontrar sucursal</a>
+  <div class="container hero__inner hero__inner--split">
+    <div class="hero__copy">
+      <div class="anim-up" style="--d:0ms"><p class="eyebrow"><span aria-hidden="true"></span>Taquería · Durango, Dgo.</p></div>
+      <h1 class="hero__title anim-up" style="--d:90ms">Tacos que se ganan el barrio a la parrilla</h1>
+      <p class="hero__lead anim-up" style="--d:180ms">Tacos al pastor y de asada, alambres, arrachera, gringas y hamburguesas. Pasa a cualquiera de nuestras tres sucursales en Durango.</p>
+      <div class="actions anim-up" style="--d:270ms">
+        <a class="btn" href="menu.html">Ver el menú</a>
+        <a class="btn btn--outline-light" href="sucursales.html">Encontrar sucursal</a>
+      </div>
+    </div>
+    <div class="hero__art anim-pop" style="--d:320ms">
+      <p class="hero__bubble" aria-hidden="true">¡Recién salido del trompo!</p>
+      <img class="mascot hero__mascot" src="images/plomazo/trompo-taquero.webp" alt="El Plomazo, nuestra mascota, rebanando pastor del trompo" width="683" height="800" decoding="async">
     </div>
   </div>
 </section>
@@ -43,14 +49,14 @@
 
 <div class="container section-stack">
   <section aria-labelledby="cat-h">
-    <div class="section-head reveal"><h2 id="cat-h">Categorías</h2><a href="menu.html">Ver menú completo</a></div>
+    <div class="section-head reveal"><h2 id="cat-h"><span>Categorías</span></h2><a href="menu.html">Ver menú completo</a></div>
     <div class="grid grid--4">
       <a class="tile reveal" href="menu.html#tacos"><img class="photo tile__photo" src="images/menu/taco-al-pastor.webp" alt="Tacos" loading="lazy"><div class="tile__shade"></div><p class="tile__name">Tacos</p></a><a class="tile reveal" href="menu.html#tradicionales"><img class="photo tile__photo" src="images/menu/tacos-asada.webp" alt="Los tradicionales" loading="lazy"><div class="tile__shade"></div><p class="tile__name">Los tradicionales</p></a><a class="tile reveal" href="menu.html#combinaciones-con-queso"><img class="photo tile__photo" src="images/menu/la-partida.webp" alt="Combinaciones con queso" loading="lazy"><div class="tile__shade"></div><p class="tile__name">Combinaciones con queso</p></a><a class="tile reveal" href="menu.html#cortes"><img class="photo tile__photo" src="images/menu/arrachera-marinada.webp" alt="Cortes" loading="lazy"><div class="tile__shade"></div><p class="tile__name">Cortes</p></a><a class="tile reveal" href="menu.html#mas-queso-y-otras-delicias"><img class="photo tile__photo" src="images/menu/sincronizada.webp" alt="Más queso y otras delicias" loading="lazy"><div class="tile__shade"></div><p class="tile__name">Más queso y otras delicias</p></a><a class="tile reveal" href="menu.html#hamburguesas"><img class="photo tile__photo" src="images/menu/hamburguesa-tradicional.webp" alt="Hamburguesas" loading="lazy"><div class="tile__shade"></div><p class="tile__name">Hamburguesas</p></a>
     </div>
   </section>
 
   <section aria-labelledby="dest-h">
-    <div class="section-head reveal"><h2 id="dest-h">Destacados</h2><a href="menu.html">Ver menú completo</a></div>
+    <div class="section-head reveal"><h2 id="dest-h"><img class="mascot section-head__mascot" src="images/plomazo/pulgar.webp" alt="" aria-hidden="true" width="800" height="522" loading="lazy" decoding="async"><span>Destacados</span></h2><a href="menu.html">Ver menú completo</a></div>
     <div class="grid grid--2"><div class="feature reveal">
   <img class="photo feature__photo" src="images/menu/la-partida.webp" alt="La partida" loading="lazy">
   <div class="feature__shade"></div>
@@ -71,12 +77,15 @@
   </section>
 
   <section aria-labelledby="serv-h">
-    <div class="section-head reveal"><h2 id="serv-h">Taquizas para eventos</h2><a href="contacto.html">Cotizar</a></div>
-    <div class="service reveal"><p>Llevamos el trompo y la parrilla a bodas, cumpleaños y reuniones. Pregunta por tu cotización.</p><a class="btn" href="contacto.html">Pedir cotización</a></div>
+    <div class="service service--mascot reveal">
+      <img class="mascot service__mascot" src="images/plomazo/taquero-carrito.webp" alt="" aria-hidden="true" width="799" height="783" loading="lazy" decoding="async">
+      <div class="service__body"><h2 id="serv-h" class="service__title">Taquizas para eventos</h2><p>Llevamos el trompo y la parrilla a bodas, cumpleaños y reuniones. Pregunta por tu cotización.</p></div>
+      <a class="btn" href="contacto.html">Pedir cotización</a>
+    </div>
   </section>
 
   <section aria-labelledby="suc-h">
-    <div class="section-head reveal"><h2 id="suc-h">Sucursales</h2><a href="sucursales.html">Ver todas</a></div>
+    <div class="section-head reveal"><h2 id="suc-h"><img class="mascot section-head__mascot" src="images/plomazo/tejanos.webp" alt="" aria-hidden="true" width="647" height="793" loading="lazy" decoding="async"><span>Sucursales</span></h2><a href="sucursales.html">Ver todas</a></div>
     <div><div class="branch-row reveal" data-search="primo de verdad primo de verdad 601, valle del sur, 34136 durango, dgo.">
   <div><h3 class="branch-row__name"><a href="sucursal-primo-de-verdad.html">Primo de Verdad</a></h3><p class="muted">Primo de Verdad 601, Valle del Sur, 34136 Durango, Dgo.</p></div>
   <div class="actions">
@@ -101,10 +110,25 @@
 </div></div>
   </section>
 
-  <section class="about-strip reveal" aria-labelledby="nos-h">
-    <h2 id="nos-h">Taquería de Durango</h2>
-    <p>Taquería El Plomazo es una taquería de Durango, Dgo., con tres sucursales. Su especialidad son los tacos al pastor y de asada, los alambres, la arrachera marinada, las gringas, los burritos y las hamburguesas.</p>
-    <a class="btn btn--outline" href="nosotros.html">Conocer más</a>
+  <section aria-labelledby="crew-h">
+    <div class="section-head reveal"><h2 id="crew-h"><span>La pandilla del Plomazo</span></h2><a href="menu.html">Ver menú completo</a></div>
+    <div class="crew">
+      <a class="crew-card reveal" href="menu.html#combinaciones-con-queso"><img class="mascot crew-card__mascot" src="images/plomazo/pirata.webp" alt="" aria-hidden="true" width="637" height="692" loading="lazy" decoding="async"><p class="crew-card__name">El Pirata</p><p class="crew-card__line">Pide unos piratas con queso.</p></a>
+      <a class="crew-card reveal" href="menu.html#cortes"><img class="mascot crew-card__mascot" src="images/plomazo/luchador.webp" alt="" aria-hidden="true" width="563" height="723" loading="lazy" decoding="async"><p class="crew-card__name">El Luchador</p><p class="crew-card__line">La lucha por el sabor, de dos de tres.</p></a>
+      <a class="crew-card reveal" href="menu.html#tacos"><img class="mascot crew-card__mascot" src="images/plomazo/serenata.webp" alt="" aria-hidden="true" width="636" height="793" loading="lazy" decoding="async"><p class="crew-card__name">El Mariachi</p><p class="crew-card__line">Serenata de pastor para la mesa.</p></a>
+      <a class="crew-card reveal" href="nosotros.html"><img class="mascot crew-card__mascot" src="images/plomazo/tejano.webp" alt="" aria-hidden="true" width="501" height="800" loading="lazy" decoding="async"><p class="crew-card__name">El Tejano</p><p class="crew-card__line">Estilo de Durango, sombrero y poncho.</p></a>
+      <a class="crew-card reveal" href="menu.html#tradicionales"><img class="mascot crew-card__mascot" src="images/plomazo/crudo.webp" alt="" aria-hidden="true" width="759" height="731" loading="lazy" decoding="async"><p class="crew-card__name">El Crudo</p><p class="crew-card__line">La cura del domingo: unos de asada.</p></a>
+      <a class="crew-card reveal" href="menu.html#tacos"><img class="mascot crew-card__mascot" src="images/plomazo/taco-cama.webp" alt="" aria-hidden="true" width="677" height="547" loading="lazy" decoding="async"><p class="crew-card__name">El Relax</p><p class="crew-card__line">Cama de tacos, nada de prisas.</p></a>
+    </div>
+  </section>
+
+  <section class="about-strip about-strip--mascot reveal" aria-labelledby="nos-h">
+    <div>
+      <h2 id="nos-h">Taquería de Durango</h2>
+      <p>Taquería El Plomazo es una taquería de Durango, Dgo., con tres sucursales. Su especialidad son los tacos al pastor y de asada, los alambres, la arrachera marinada, las gringas, los burritos y las hamburguesas.</p>
+      <a class="btn btn--outline" href="nosotros.html">Conocer más</a>
+    </div>
+    <img class="mascot about-strip__mascot" src="images/plomazo/alacran.webp" alt="" aria-hidden="true" width="646" height="717" loading="lazy" decoding="async">
   </section>
 </div>
 </main>
@@ -113,6 +137,7 @@
     <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
     <div><h2>Contacto</h2><ul>
       <li><a href="tel:6181534075">618 153 4075</a></li>
+      <li><a href="mailto:taqueriaelplomazo@gmail.com">taqueriaelplomazo@gmail.com</a></li>
       
       <li><a href="https://www.instagram.com/taqueriaelplomazo/">Instagram</a></li>
       <li><a href="https://www.facebook.com/taqueriaelplomazo/">Facebook</a></li>

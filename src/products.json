@@ -116,7 +116,7 @@
   "name": "Choriqueso",
   "price": 169,
   "description": "Taco en tortilla de maíz con chorizo de la casa y queso asadero, tamaño a elegir.",
-  "image": "images/menu/choriqueso.webp"
+  "image": "images/menu/choriqueso-taco.webp"
  },
  {
   "cat": "combinaciones-con-queso",
@@ -128,7 +128,7 @@
  {
   "cat": "combinaciones-con-queso",
   "name": "Bistek con champiñones y queso",
-  "price": 143.65,
+  "price": 169,
   "description": "Taco en tortilla de maíz con bistek de res, champiñones y queso de asadero, tamaño a elegir.",
   "image": "images/menu/bistek-con-champinones-y-queso.webp"
  },
@@ -178,7 +178,7 @@
   "cat": "combinaciones-con-queso",
   "name": "Choriqueso",
   "price": 156,
-  "description": "Chorizo hecho en casa con queso asadero.",
+  "description": "Chorizo hecho en casa con queso asadero, porción personal.",
   "image": "images/menu/choriqueso.webp"
  },
  {
@@ -226,7 +226,7 @@
  {
   "cat": "cortes",
   "name": "El pionero",
-  "price": 118.3,
+  "price": 169,
   "description": "Taco en tortilla de maíz con bistek encebollado, tocino, champiñones con queso, tamaño a elegir.",
   "image": "images/menu/el-pionero.webp"
  },
@@ -235,7 +235,7 @@
   "name": "El fogón suizo",
   "price": 169,
   "description": "Taco en tortilla de maíz con bistek de res, carne al pastor, champiñones y chile jalapeño, queso, tamaño a elegir.",
-  "image": "images/menu/el-fogon-suizo.webp"
+  "image": "images/menu/el-fogon-suizo-taco.webp"
  },
  {
   "cat": "cortes",
@@ -249,28 +249,28 @@
   "name": "El hawaiano",
   "price": 169,
   "description": "Taco en tortilla de maíz con rajas, champiñones, piña en almíbar, queso, tamaño a elegir.",
-  "image": "images/menu/el-hawaiano.webp"
+  "image": "images/menu/el-hawaiano-taco.webp"
  },
  {
   "cat": "cortes",
   "name": "La emboscada",
-  "price": 143.65,
+  "price": 169,
   "description": "Taco en tortilla de maíz con chuleta, tocino, champiñones, chile poblano, cebolla, jamón, salchicha queso, tamaño a elegir.",
-  "image": "images/menu/la-emboscada.webp"
+  "image": "images/menu/la-emboscada-taco.webp"
  },
  {
   "cat": "cortes",
   "name": "El plomazo",
-  "price": 105,
+  "price": 175,
   "description": "Taco en tortilla de maíz con carne al pastor, champiñones, queso, tamaño a elegir.",
-  "image": "images/menu/el-plomazo.webp"
+  "image": "images/menu/el-plomazo-taco.webp"
  },
  {
   "cat": "cortes",
   "name": "La suiza",
   "price": 169,
   "description": "Taco en tortilla de maíz con carne al pastor, queso asadero, tamaño a elegir.",
-  "image": "images/menu/la-suiza.webp"
+  "image": "images/menu/la-suiza-taco.webp"
  },
  {
   "cat": "cortes",
@@ -282,7 +282,7 @@
  {
   "cat": "cortes",
   "name": "El plomazo",
-  "price": 105,
+  "price": 175,
   "description": "Carne al pastor con champiñones y queso, porción personal.",
   "image": "images/menu/el-plomazo.webp"
  },
@@ -299,6 +299,13 @@
   "price": 156,
   "description": "Chuleta, tocino, champinones, chile poblano, cebolla, jamon, salchicha y queso, porción personal.",
   "image": "images/menu/la-emboscada.webp"
+ },
+ {
+  "cat": "cortes",
+  "name": "El fogón suizo",
+  "price": 156,
+  "description": "Bistec de res, carne al pastor, champiñones, chile jalapeño y queso, porción personal.",
+  "image": "images/menu/el-fogon-suizo-personal.webp"
  },
  {
   "cat": "cortes",
@@ -351,6 +358,13 @@
  },
  {
   "cat": "mas-queso-y-otras-delicias",
+  "name": "Frijoles charros",
+  "price": 117,
+  "description": "Frijoles caldosos preparados al estilo norteño con tocino, jamón y salchicha.",
+  "image": "images/menu/frijoles-charros.webp"
+ },
+ {
+  "cat": "mas-queso-y-otras-delicias",
   "name": "Burrito carne asada",
   "price": 97.5,
   "description": "Burrito relleno de carne asada.",
@@ -366,7 +380,7 @@
  {
   "cat": "mas-queso-y-otras-delicias",
   "name": "Burrito pastor",
-  "price": 77.35,
+  "price": 91,
   "description": "Burrito de carne al pastor, marinado.",
   "image": "images/menu/burrito-pastor.webp"
  },
@@ -380,9 +394,9 @@
  {
   "cat": "mas-queso-y-otras-delicias",
   "name": "Champiqueso",
-  "price": 118.3,
+  "price": 169,
   "description": "Taco en tortilla de maíz con queso fundido y champiñones, tamaño a elegir.",
-  "image": "images/menu/champiqueso.webp"
+  "image": "images/menu/champiqueso-taco.webp"
  },
  {
   "cat": "mas-queso-y-otras-delicias",
@@ -417,7 +431,7 @@
   "name": "Rajas con queso",
   "price": 169,
   "description": "Taco en tortilla de maíz con queso asadero y rajas de chile poblano, tamaño a elegir.",
-  "image": "images/menu/rajas-con-queso.webp"
+  "image": "images/menu/rajas-con-queso-taco.webp"
  },
  {
   "cat": "mas-queso-y-otras-delicias",
@@ -488,12 +502,5 @@
   "price": 100,
   "description": "Hamburguesa con carne de lomo de cerdo al pastor.",
   "image": "images/menu/hamburguesa-al-pastor.webp"
- },
- {
-  "cat": "mas-queso-y-otras-delicias",
-  "name": "Frijoles charros",
-  "price": 117,
-  "description": "Frijoles caldosos preparados al estilo norteño con tocino, jamón y salchicha.",
-  "image": "images/menu/frijoles-charros.webp"
  }
 ]

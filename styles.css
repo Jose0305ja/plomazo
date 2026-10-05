@@ -279,6 +279,71 @@ ul { margin: 0; padding: 0; list-style: none; }
 .site-footer__legal { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgb(255 255 255 / 0.1); }
 .site-footer__legal p { margin: 0; }
 
+/* ---------- Personajes del Plomazo (stickers) ---------- */
+.mascot { height: auto; filter: drop-shadow(0 8px 12px rgb(26 21 18 / 0.25)); user-select: none; -webkit-user-drag: none; }
+
+/* Hero a dos columnas con el personaje */
+.hero__inner--split { display: grid; gap: 8px; }
+.hero__copy { display: flex; flex-direction: column; gap: 24px; }
+.hero__art { position: relative; justify-self: center; width: min(62vw, 260px); margin-top: 16px; }
+.hero__art--sm { width: min(44vw, 170px); margin-top: 0; }
+.hero__mascot { width: 100%; filter: drop-shadow(0 18px 28px rgb(0 0 0 / 0.55)); animation: float 4.5s ease-in-out infinite alternate; transform-origin: 50% 90%; }
+.hero__art:hover .hero__mascot { animation: wiggle 600ms var(--ease); }
+.hero__bubble { position: absolute; z-index: 1; top: 4%; left: -12%; max-width: 11ch; margin: 0; padding: 8px 12px; border: 2px solid var(--carbon); border-radius: 16px 16px 16px 4px; background: var(--corn); color: var(--carbon); font: 400 1rem/1.05 var(--font-display); text-transform: uppercase; transform: rotate(-6deg); box-shadow: 3px 3px 0 var(--carbon); }
+@media (min-width: 900px) {
+  .hero__inner--split { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); align-items: center; gap: 32px; }
+  .hero__art { width: 100%; max-width: 380px; margin: -24px 0 -48px; }
+  .hero__art--sm { max-width: 220px; margin: 0; }
+  .hero__bubble { left: -6%; top: 0; font-size: 1.25rem; }
+}
+
+/* Personaje junto a títulos */
+.section-head h2 { display: flex; align-items: center; gap: 10px; }
+.section-head:has(.section-head__mascot) { align-items: center; }
+.section-head__mascot { width: auto; height: 72px; margin: -24px 0 -10px; transform: rotate(-6deg); transition: transform 300ms var(--ease); }
+.section-head:hover .section-head__mascot { transform: rotate(4deg) scale(1.1); }
+.page-head { display: flex; align-items: flex-end; gap: 16px; }
+.page-head .page-title { margin-bottom: 24px; }
+.page-head__mascot { flex: none; width: auto; height: 96px; margin: -16px 0 4px; transform: rotate(5deg); }
+@media (min-width: 640px) { .page-head__mascot { height: 132px; margin-top: -32px; } }
+.menu-cat__mascot { flex: none; width: auto; height: 76px; margin: -20px -4px -10px 0; transform: rotate(-5deg); transition: transform 300ms var(--ease); }
+.menu-cat__head:hover .menu-cat__mascot { transform: rotate(5deg) scale(1.08); }
+
+/* Taquizas con el taquero de carrito */
+.service--mascot { position: relative; display: grid; gap: 16px; padding-top: 20px; overflow: visible; background: var(--warm-white) radial-gradient(circle at 0% 100%, rgb(232 185 58 / 0.22), transparent 55%); }
+.service__mascot { width: 150px; justify-self: center; margin-top: -48px; transform: rotate(-4deg); }
+.service__title { margin-bottom: 6px; font-family: var(--font-display); font-weight: 400; font-size: 1.75rem; text-transform: uppercase; }
+.service--mascot p { margin: 0; }
+@media (min-width: 640px) {
+  .service--mascot { grid-template-columns: 170px 1fr auto; align-items: center; gap: 24px; padding: 20px 28px 20px 16px; }
+  .service__mascot { width: 100%; margin: -56px 0 -28px; }
+}
+.section-stack > section:has(.service--mascot) { margin-top: 24px; }
+
+/* La pandilla del Plomazo */
+.crew { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (min-width: 640px) { .crew { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+@media (min-width: 1024px) { .crew { grid-template-columns: repeat(6, 1fr); } }
+.crew-card { display: flex; flex-direction: column; align-items: center; padding: 16px 12px 18px; border: 2px dashed var(--border-strong); border-radius: 14px; background: var(--warm-white); color: var(--ink); text-align: center; text-decoration: none; }
+.crew-card__mascot { width: auto; height: 132px; max-width: 100%; object-fit: contain; margin-bottom: 10px; transition: transform 400ms var(--ease); }
+.crew-card:nth-child(odd) .crew-card__mascot { transform: rotate(-4deg); }
+.crew-card:nth-child(even) .crew-card__mascot { transform: rotate(4deg); }
+.crew-card:hover { border-style: solid; border-color: var(--ember); }
+.crew-card:hover .crew-card__mascot { transform: rotate(0) scale(1.1) translateY(-6px); }
+.crew-card__name { margin: 0 0 2px; font-family: var(--font-display); font-size: 1.25rem; text-transform: uppercase; color: var(--ember); }
+.crew-card__line { margin: 0; font-size: 0.8125rem; color: var(--muted-ink); }
+.js .crew-card.reveal { transition: opacity 650ms var(--ease), transform 650ms var(--ease), border-color 200ms; transition-delay: var(--rd, 0ms), var(--rd, 0ms), 0ms; }
+
+/* Franja "Taquería de Durango" con el alacrán */
+.about-strip--mascot { position: relative; display: grid; gap: 8px; overflow: hidden; }
+.about-strip__mascot { width: 150px; justify-self: end; margin: -8px -8px -24px 0; transform: rotate(6deg); }
+@media (min-width: 640px) {
+  .about-strip--mascot { grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+  .about-strip__mascot { width: 190px; margin: -16px 0 -28px; }
+}
+
+.empty__mascot { width: auto; height: 150px; margin: 0 auto 16px; animation: float 4.5s ease-in-out infinite alternate; }
+
 /* ---------- Animaciones ---------- */
 @keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
@@ -287,16 +352,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 @keyframes glow { from { transform: translate(0, 0) scale(1); opacity: 0.8; } to { transform: translate(-6%, 8%) scale(1.12); opacity: 1; } }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.08); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes float { from { transform: translateY(0) rotate(-2deg); } to { transform: translateY(-10px) rotate(2deg); } }
+@keyframes wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-7deg); } 60% { transform: rotate(5deg); } }
+@keyframes pop-in { from { opacity: 0; transform: scale(0.6) rotate(-10deg); } to { opacity: 1; transform: none; } }
 
 /* Entrada al cargar (hero, títulos) */
 .anim-up { animation: fade-up 700ms var(--ease) both; animation-delay: var(--d, 0ms); }
+.anim-pop { animation: pop-in 800ms cubic-bezier(0.34, 1.56, 0.64, 1) both; animation-delay: var(--d, 0ms); }
 
 /* Aparecer al hacer scroll: solo se oculta si hay JS (sin JS todo es visible). */
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 650ms var(--ease), transform 650ms var(--ease), background 200ms, padding-left 300ms var(--ease), box-shadow 300ms var(--ease); transition-delay: var(--rd, 0ms), var(--rd, 0ms), 0ms, 0ms, 0ms; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__bg { animation: none; }
+  .hero__bg, .hero__mascot, .empty__mascot { animation: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
   .marquee__track { animation: none; }

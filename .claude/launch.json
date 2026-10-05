@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "plomazo", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8000", "--directory", "/Users/joser/Desktop/plomazo-landing"], "port": 8000 }
+  ]
+}

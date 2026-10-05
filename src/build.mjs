@@ -3,13 +3,21 @@
 import { writeFileSync } from "node:fs";
 import {
   SITE, NAV, CATEGORIES, PRODUCTS, PROMOTIONS, SERVICES, BRANCHES, GALLERY, HISTORY,
+  MASCOTS, CATEGORY_MASCOT, CREW,
 } from "./content.mjs";
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const money = (n) => `$${Number.isInteger(n) ? n : n.toFixed(2)}`;
 const waLink = (n) => `https://wa.me/${String(n).replace(/\D/g, "")}`;
-const empty = (title, text) => `<div class="empty reveal"><p class="empty__title">${title}</p><p class="muted">${text}</p></div>`;
+
+// Personaje del Plomazo. Decorativo salvo que se pase `alt`.
+function mascot(key, className = "", { alt = "", eager = false } = {}) {
+  const m = MASCOTS[key];
+  return `<img class="mascot ${className}" src="images/plomazo/${key}.webp" alt="${esc(alt)}"${alt ? "" : ' aria-hidden="true"'} width="${m.w}" height="${m.h}"${eager ? "" : ' loading="lazy"'} decoding="async">`;
+}
+
+const empty = (title, text, key) => `<div class="empty reveal">${key ? mascot(key, "empty__mascot") : ""}<p class="empty__title">${title}</p><p class="muted">${text}</p></div>`;
 
 // Foto: si hay `image` usa <img>; si no, marcador con degradado.
 function photo({ image, label, tone = 1, className = "" }) {
@@ -45,6 +53,7 @@ function footer() {
     <div><h2>${SITE.name}</h2><ul>${navLinks}</ul></div>
     <div><h2>Contacto</h2><ul>
       <li><a href="tel:${SITE.phone}">${SITE.phoneLabel}</a></li>
+      ${SITE.email ? `<li><a href="mailto:${SITE.email}">${SITE.email}</a></li>` : ""}
       ${SITE.whatsapp ? `<li><a href="${waLink(SITE.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>` : ""}
       ${SITE.instagramUrl ? `<li><a href="${SITE.instagramUrl}">Instagram</a></li>` : ""}
       ${SITE.facebookUrl ? `<li><a href="${SITE.facebookUrl}">Facebook</a></li>` : ""}
@@ -83,7 +92,12 @@ ${footer()}
 }
 
 const eyebrow = (t) => `<p class="eyebrow"><span aria-hidden="true"></span>${t}</p>`;
-const titleBlock = (t, extra = "") => `<h1 class="page-title anim-up">${t}</h1>${extra}`;
+const titleBlock = (t, key) =>
+  key
+    ? `<div class="page-head"><h1 class="page-title anim-up">${t}</h1>${mascot(key, "page-head__mascot anim-pop", { eager: true })}</div>`
+    : `<h1 class="page-title anim-up">${t}</h1>`;
+const sectionHead = (id, title, href, label, key) =>
+  `<div class="section-head reveal"><h2 id="${id}">${key ? mascot(key, "section-head__mascot") : ""}<span>${title}</span></h2><a href="${href}">${label}</a></div>`;
 
 function productRow(p) {
   return `<div class="product-row reveal${p.unavailable ? " is-unavailable" : ""}">
@@ -157,13 +171,19 @@ page({
   body: `<section class="hero" data-surface="carbon">
   <img class="hero__bg" src="images/portada.webp" alt="" aria-hidden="true">
   <div class="hero__glow" aria-hidden="true"></div>
-  <div class="container hero__inner">
-    <div class="anim-up" style="--d:0ms">${eyebrow(`Taquería · ${SITE.city}`)}</div>
-    <h1 class="hero__title anim-up" style="--d:90ms">Tacos que se ganan el barrio a la parrilla</h1>
-    <p class="hero__lead anim-up" style="--d:180ms">Tacos al pastor y de asada, alambres, arrachera, gringas y hamburguesas. Pasa a cualquiera de nuestras tres sucursales en Durango.</p>
-    <div class="actions anim-up" style="--d:270ms">
-      <a class="btn" href="menu.html">Ver el menú</a>
-      <a class="btn btn--outline-light" href="sucursales.html">Encontrar sucursal</a>
+  <div class="container hero__inner hero__inner--split">
+    <div class="hero__copy">
+      <div class="anim-up" style="--d:0ms">${eyebrow(`Taquería · ${SITE.city}`)}</div>
+      <h1 class="hero__title anim-up" style="--d:90ms">Tacos que se ganan el barrio a la parrilla</h1>
+      <p class="hero__lead anim-up" style="--d:180ms">Tacos al pastor y de asada, alambres, arrachera, gringas y hamburguesas. Pasa a cualquiera de nuestras tres sucursales en Durango.</p>
+      <div class="actions anim-up" style="--d:270ms">
+        <a class="btn" href="menu.html">Ver el menú</a>
+        <a class="btn btn--outline-light" href="sucursales.html">Encontrar sucursal</a>
+      </div>
+    </div>
+    <div class="hero__art anim-pop" style="--d:320ms">
+      <p class="hero__bubble" aria-hidden="true">¡Recién salido del trompo!</p>
+      ${mascot("trompo-taquero", "hero__mascot", { alt: "El Plomazo, nuestra mascota, rebanando pastor del trompo", eager: true })}
     </div>
   </div>
 </section>
@@ -172,31 +192,44 @@ page({
 
 <div class="container section-stack">
   <section aria-labelledby="cat-h">
-    <div class="section-head reveal"><h2 id="cat-h">Categorías</h2><a href="menu.html">Ver menú completo</a></div>
+    ${sectionHead("cat-h", "Categorías", "menu.html", "Ver menú completo")}
     <div class="grid grid--4">
       ${CATEGORIES.map((c) => `<a class="tile reveal" href="menu.html#${c.slug}">${photo({ image: c.image, label: c.name, className: "tile__photo" })}<div class="tile__shade"></div><p class="tile__name">${c.name}</p></a>`).join("")}
     </div>
   </section>
 
   <section aria-labelledby="dest-h">
-    <div class="section-head reveal"><h2 id="dest-h">Destacados</h2><a href="menu.html">Ver menú completo</a></div>
+    ${sectionHead("dest-h", "Destacados", "menu.html", "Ver menú completo", "pulgar")}
     <div class="grid grid--2">${featured.slice(0, 4).map(productFeature).join("")}</div>
   </section>
 
   <section aria-labelledby="serv-h">
-    <div class="section-head reveal"><h2 id="serv-h">Taquizas para eventos</h2><a href="contacto.html">Cotizar</a></div>
-    ${SERVICES.map((s) => `<div class="service reveal"><p>${esc(s.description)}</p><a class="btn" href="contacto.html">Pedir cotización</a></div>`).join("")}
+    ${SERVICES.map((s) => `<div class="service service--mascot reveal">
+      ${mascot("taquero-carrito", "service__mascot")}
+      <div class="service__body"><h2 id="serv-h" class="service__title">${esc(s.title)}</h2><p>${esc(s.description)}</p></div>
+      <a class="btn" href="contacto.html">Pedir cotización</a>
+    </div>`).join("")}
   </section>
 
   <section aria-labelledby="suc-h">
-    <div class="section-head reveal"><h2 id="suc-h">Sucursales</h2><a href="sucursales.html">Ver todas</a></div>
+    ${sectionHead("suc-h", "Sucursales", "sucursales.html", "Ver todas", "tejanos")}
     <div>${BRANCHES.map((b) => branchRow(b, 3)).join("")}</div>
   </section>
 
-  <section class="about-strip reveal" aria-labelledby="nos-h">
-    <h2 id="nos-h">Taquería de Durango</h2>
-    <p>${esc(HISTORY[0])}</p>
-    <a class="btn btn--outline" href="nosotros.html">Conocer más</a>
+  <section aria-labelledby="crew-h">
+    ${sectionHead("crew-h", "La pandilla del Plomazo", "menu.html", "Ver menú completo")}
+    <div class="crew">
+      ${CREW.map((c) => `<a class="crew-card reveal" href="${c.href}">${mascot(c.key, "crew-card__mascot")}<p class="crew-card__name">${esc(c.name)}</p><p class="crew-card__line">${esc(c.line)}</p></a>`).join("\n      ")}
+    </div>
+  </section>
+
+  <section class="about-strip about-strip--mascot reveal" aria-labelledby="nos-h">
+    <div>
+      <h2 id="nos-h">Taquería de Durango</h2>
+      <p>${esc(HISTORY[0])}</p>
+      <a class="btn btn--outline" href="nosotros.html">Conocer más</a>
+    </div>
+    ${mascot("alacran", "about-strip__mascot")}
   </section>
 </div>`,
 });
@@ -208,8 +241,8 @@ page({
   description: "Consulta el menú completo de Taquerías El Plomazo por categoría.",
   current: "menu",
   body: `<div class="container page">
-  ${titleBlock("Menú")}
-  <p class="notice anim-up" style="--d:80ms">Precios de referencia tomados de la carta publicada en Rappi (pueden variar en el local). Pendientes de confirmar con el restaurante.</p>
+  ${titleBlock("Menú", "chef")}
+  <p class="notice anim-up" style="--d:80ms">Precios regulares de la carta publicada en Rappi, revisados el 4 de octubre de 2026 (sin descuentos temporales de la app). Pueden variar en el local.</p>
   <nav class="pills pills--sticky" aria-label="Categorías del menú" data-filter-group="menu">
     <button type="button" class="pill is-active" data-filter="all">Todas</button>
     ${CATEGORIES.map((c) => `<button type="button" class="pill" data-filter="${c.slug}">${c.name}</button>`).join("")}
@@ -219,7 +252,7 @@ page({
     const feat = items.filter((p) => p.featured);
     const rest = items.filter((p) => !p.featured);
     return `<section class="menu-cat" id="${c.slug}" data-category="${c.slug}" aria-labelledby="h-${c.slug}">
-    <div class="menu-cat__head reveal"><h2 id="h-${c.slug}">${c.name}</h2><div class="rule"></div></div>
+    <div class="menu-cat__head reveal">${mascot(CATEGORY_MASCOT[c.slug], "menu-cat__mascot")}<h2 id="h-${c.slug}">${c.name}</h2><div class="rule"></div></div>
     ${feat.length ? `<div class="grid grid--2 mb">${feat.map(productFeature).join("")}</div>` : ""}
     ${rest.map(productRow).join("")}
   </section>`;
@@ -234,7 +267,7 @@ page({
   description: "Encuentra la sucursal de Taquerías El Plomazo más cercana a ti: dirección, teléfono, WhatsApp y cómo llegar.",
   current: "sucursales",
   body: `<div class="container page">
-  ${titleBlock("Sucursales")}
+  ${titleBlock("Sucursales", "tejanos")}
   <div class="search anim-up" style="--d:100ms">
     <label for="branch-search" class="sr-only">Buscar sucursal</label>
     <input id="branch-search" type="search" placeholder="Buscar por nombre, calle o colonia" autocomplete="off">
@@ -282,7 +315,7 @@ page({
   current: "promociones",
   body: `<div class="container page">
   ${titleBlock("Promociones")}
-  ${PROMOTIONS.length ? `<div class="grid grid--3">${PROMOTIONS.map((p) => promoCard(p, 2)).join("")}</div>` : empty("Por ahora no hay promociones publicadas", "Síguenos en Facebook e Instagram para enterarte de las nuevas promociones.")}
+  ${PROMOTIONS.length ? `<div class="grid grid--3">${PROMOTIONS.map((p) => promoCard(p, 2)).join("")}</div>` : empty("Por ahora no hay promociones publicadas", "Síguenos en Facebook e Instagram para enterarte de las nuevas promociones.", "taco-cama")}
   <div class="actions" style="margin-top:24px"><a class="btn" href="${SITE.facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a><a class="btn btn--outline" href="${SITE.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a></div>
 </div>`,
 });
@@ -295,7 +328,7 @@ page({
   description: "Fotografías de platillos, ambiente y sucursales de Taquerías El Plomazo.",
   current: "galeria",
   body: `<div class="container page">
-  ${titleBlock("Galería")}
+  ${titleBlock("Galería", "luchador")}
   <nav class="pills" aria-label="Categorías de la galería" data-filter-group="gallery">
     <button type="button" class="pill is-active" data-filter="all">Todas</button>
     ${galCats.map((c) => `<button type="button" class="pill" data-filter="${esc(c)}">${c}</button>`).join("")}
@@ -318,9 +351,12 @@ page({
   current: "nosotros",
   body: `<section class="hero hero--short" data-surface="carbon">
   <div class="hero__glow" aria-hidden="true"></div>
-  <div class="container hero__inner">
-    <div class="anim-up">${eyebrow("Quiénes somos")}</div>
-    <h1 class="hero__title anim-up" style="--d:90ms">Tacos de Durango, a la parrilla y al trompo</h1>
+  <div class="container hero__inner hero__inner--split">
+    <div class="hero__copy">
+      <div class="anim-up">${eyebrow("Quiénes somos")}</div>
+      <h1 class="hero__title anim-up" style="--d:90ms">Tacos de Durango, a la parrilla y al trompo</h1>
+    </div>
+    <div class="hero__art hero__art--sm anim-pop" style="--d:240ms">${mascot("tejano", "hero__mascot", { eager: true })}</div>
   </div>
 </section>
 <div class="container section-stack">
@@ -339,11 +375,12 @@ page({
   description: "Llama, escribe por WhatsApp o encuentra tu sucursal de Taquerías El Plomazo más cercana.",
   current: "contacto",
   body: `<div class="container page">
-  ${titleBlock("Contacto")}
+  ${titleBlock("Contacto", "veloz")}
   <p class="lead muted anim-up" style="--d:80ms">La forma más rápida de contactarnos es directo: llama, escríbenos por redes o encuentra la sucursal más cercana. También cotizamos taquizas para eventos.</p>
   <div class="actions anim-up" style="--d:160ms">
     <a class="btn btn--call" href="tel:${SITE.phone}">Llamar</a>
     ${SITE.whatsapp ? `<a class="btn btn--wa" href="${waLink(SITE.whatsapp)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>` : ""}
+    ${SITE.email ? `<a class="btn btn--outline" href="mailto:${SITE.email}">Correo</a>` : ""}
     <a class="btn btn--outline" href="sucursales.html">Ver sucursales</a>
     <a class="btn btn--ghost" href="${SITE.facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a>
     <a class="btn btn--ghost" href="${SITE.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -374,7 +411,7 @@ page({
   description: "La página que buscas no existe.",
   current: "",
   body: `<div class="container page page--narrow">
-  ${titleBlock("Página no encontrada")}
+  ${titleBlock("Página no encontrada", "crudo")}
   <p class="lead muted">La página que buscas no existe o cambió de lugar.</p>
   <div class="actions"><a class="btn" href="index.html">Volver al inicio</a><a class="btn btn--outline" href="menu.html">Ver el menú</a></div>
 </div>`,
