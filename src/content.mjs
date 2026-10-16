@@ -18,7 +18,6 @@ export const NAV = [
   { href: "index.html", label: "Inicio", key: "inicio" },
   { href: "menu.html", label: "Menú", key: "menu" },
   { href: "sucursales.html", label: "Sucursales", key: "sucursales" },
-  { href: "promociones.html", label: "Promociones", key: "promociones" },
   { href: "galeria.html", label: "Galería", key: "galeria" },
   { href: "nosotros.html", label: "Nosotros", key: "nosotros" },
   { href: "contacto.html", label: "Contacto", key: "contacto" },
@@ -26,18 +25,40 @@ export const NAV = [
 
 // Categorías tal como están en el menú del restaurante; `image` es la foto del tile.
 export const CATEGORIES = [
-  { slug: "tacos", name: "Tacos", image: "images/menu/taco-al-pastor.webp" },
-  { slug: "tradicionales", name: "Los tradicionales", image: "images/menu/tacos-asada.webp" },
+  { slug: "tacos", name: "Tacos", image: "images/redes/ig-2026-09-20.jpg" },
+  { slug: "tradicionales", name: "Los tradicionales", image: "images/redes/ig-2026-08-19.jpg" },
   { slug: "combinaciones-con-queso", name: "Combinaciones con queso", image: "images/menu/la-partida.webp" },
   { slug: "cortes", name: "Cortes", image: "images/menu/arrachera-marinada.webp" },
-  { slug: "mas-queso-y-otras-delicias", name: "Más queso y otras delicias", image: "images/menu/sincronizada.webp" },
+  { slug: "mas-queso-y-otras-delicias", name: "Más queso y otras delicias", image: "images/redes/ig-2026-09-09.jpg" },
   { slug: "hamburguesas", name: "Hamburguesas", image: "images/menu/hamburguesa-tradicional.webp" },
 ];
 
-// Platillos destacados: fotos que sí parecen reales del local.
+// Platillos destacados (solo con foto real).
 const FEATURED = new Set([
-  "La partida", "Chuleta con queso", "Arrachera marinada", "Fua",
-  "El pionero", "Hamburguesa tradicional",
+  "Taco al pastor", "La partida", "Arrachera marinada", "Fua",
+  "El plomazo (porción personal)", "Papa queso y carne asada", "Hamburguesa tradicional",
+]);
+
+// Fotos REALES publicadas por el restaurante en sus redes (Instagram/Facebook),
+// asignadas solo cuando el platillo de la foto coincide con el del menú.
+const SOCIAL_PHOTOS = {
+  "Taco al pastor": "images/redes/ig-2026-09-20.jpg",
+  "Tacos asada": "images/redes/ig-2026-08-17.jpg",
+  "El plomazo (taco)": "images/redes/ig-2026-08-30.jpg",
+  "El plomazo (porción personal)": "images/redes/fb-post-1.jpg",
+  "La suiza (taco)": "images/redes/ig-2026-09-04.jpg",
+  "La suiza (porción personal)": "images/redes/ig-2026-09-22.jpg",
+  "La emboscada (porción personal)": "images/redes/ig-2026-09-14.jpg",
+  "Papa queso y carne asada": "images/redes/ig-2026-09-09.jpg",
+  "Papa asada con queso": "images/redes/ig-2026-08-14.jpg",
+};
+
+// Fotos de la carta de Rappi (subidas por el restaurante) que sí se ven reales.
+const RAPPI_REAL = new Set([
+  "La partida", "Chuleta con queso", "Arrachera marinada", "Fua", "El pionero",
+  "Bistek a la mexicana", "Arrachera marinada con queso", "Burrito carne asada",
+  "Burrito pastor", "Bistek con champiñones", "Hamburguesa tradicional",
+  "Hamburguesa vegetariana", "Hamburguesa al pastor",
 ]);
 
 const RAW = JSON.parse(readFileSync(new URL("./products.json", import.meta.url), "utf8"));
@@ -50,11 +71,18 @@ export const PRODUCTS = RAW.map((p) => {
   const suffix = dupes.has(norm(p.name))
     ? /porci[oó]n personal/i.test(p.description) ? " (porción personal)" : " (taco)"
     : "";
-  return { ...p, name: p.name + suffix, featured: FEATURED.has(p.name) };
+  const name = p.name + suffix;
+  const social = SOCIAL_PHOTOS[name];
+  const real = social || RAPPI_REAL.has(p.name);
+  return {
+    ...p,
+    name,
+    image: social ?? p.image,
+    // Sin foto propia del restaurante: se muestra la foto de la carta de Rappi, marcada como ilustrativa.
+    illustrative: !real,
+    featured: FEATURED.has(name),
+  };
 });
-
-// Sin promociones propias confirmadas todavía.
-export const PROMOTIONS = [];
 
 export const SERVICES = [
   { title: "Taquizas para eventos", description: "Llevamos el trompo y la parrilla a bodas, cumpleaños y reuniones. Pregunta por tu cotización." },
@@ -64,51 +92,68 @@ const BRANCH_HOURS = "Horario por confirmar con el restaurante.";
 const gmaps = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
 const EVERY_DAY = (h) => ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"].map((d) => [d, h]);
+const coords = (lat, lng) => `${lat},${lng}`;
 
-// `photo`: pon aquí la foto real de la fachada/local (images/sucursales/<slug>.jpg).
-// Mientras tanto se muestra una foto de platillos del restaurante.
+// Las 4 ubicaciones que el restaurante publica en su Facebook. `photo` es la fachada
+// real tomada de la ficha de Google Maps de cada sucursal (si no hay, imagen de marca).
 export const BRANCHES = [
+  {
+    slug: "matriz-pino-suarez",
+    name: "Matriz · Pino Suárez",
+    zone: "Sucursal matriz",
+    address: "Prolongación Pino Suárez #3000, Col. J. Guadalupe Rodríguez, Durango, Dgo.",
+    phone: "6181534075",
+    whatsapp: "",
+    mapQuery: coords(24.0266762, -104.6370087),
+    mapsUrl: gmaps("Taquería El Plomazo, Pino Suárez, Hipódromo, Durango"),
+    photo: "images/sucursales/matriz-pino-suarez.jpg",
+    photoAlt: "Fachada de Taquería El Plomazo en Pino Suárez",
+    schedule: null,
+    scheduleNote: "Cierra a las 2:00 a. m. según Google Maps. Horario completo por confirmar con el restaurante.",
+  },
   {
     slug: "primo-de-verdad",
     name: "Primo de Verdad",
     zone: "Valle del Sur",
-    address: "Primo de Verdad 601, Valle del Sur, 34136 Durango, Dgo.",
+    address: "Primo de Verdad 601 D, Valle del Sur, 34136 Durango, Dgo.",
     phone: "6181534075",
     whatsapp: "",
-    mapQuery: "Taquería El Plomazo, Primo de Verdad 601, Valle del Sur, Durango",
+    mapQuery: coords(24.0134855, -104.6771364),
     mapsUrl: gmaps("Taquería El Plomazo, Primo de Verdad 601, Valle del Sur, Durango"),
-    photo: "images/menu/arrachera-marinada.webp",
-    photoAlt: "Arrachera marinada de Taquería El Plomazo",
+    photo: "images/sucursales/primo-de-verdad.jpg",
+    photoAlt: "Interior y carrito de tacos de la sucursal Primo de Verdad",
+    photoPosition: "50% 70%",
     schedule: EVERY_DAY("17:00 – 23:30"),
     scheduleNote: "Horario publicado en Rappi; confirmar con el restaurante.",
   },
   {
     slug: "francisco-villa",
     name: "Blvd. Francisco Villa",
-    zone: "Esq. Calle Lima",
-    address: "Blvd. Francisco Villa esq. Calle Lima 101, Durango, Dgo.",
-    phone: "6181534075",
+    zone: "Frente a la Arena Lobos",
+    address: "Blvd. Francisco Villa esq. Calle Lima 101 (Fracc. Guadalupe), Durango, Dgo.",
+    phone: "6183098325",
     whatsapp: "",
-    mapQuery: "Taquería El Plomazo, Blvd. Francisco Villa y Calle Lima 101, Durango",
-    mapsUrl: gmaps("Taquería El Plomazo, Blvd. Francisco Villa y Calle Lima 101, Durango"),
-    photo: "images/menu/fua.webp",
-    photoAlt: "Fua de Taquería El Plomazo",
+    mapQuery: coords(24.0438905, -104.6266527),
+    mapsUrl: gmaps("Taquería El Plomazo, Blvd. Francisco Villa 403, Guadalupe, Durango"),
+    photo: "images/sucursales/francisco-villa.jpg",
+    photoAlt: "Fachada de Taquería El Plomazo en Blvd. Francisco Villa",
     schedule: null,
-    scheduleNote: BRANCH_HOURS,
+    scheduleNote: "El letrero de la sucursal indica de 2:00 p. m. a 2:00 a. m.; Google Maps indica cierre a la 1:00 a. m. Confirmar con el restaurante.",
   },
   {
     slug: "guadiana",
     name: "Blvd. Guadiana",
-    zone: "Tierra y Libertad",
-    address: "Calle 17 de Septiembre 150, Tierra y Libertad, 34127 Durango, Dgo. (esq. Blvd. Guadiana)",
+    zone: "Por el puente La Salle",
+    address: "Blvd. Guadiana esq. Calle 17 de Septiembre, frente a Farmacia Guadalajara, Durango, Dgo.",
     phone: "6181534075",
     whatsapp: "",
-    mapQuery: "Taquería El Plomazo, Calle 17 de Septiembre 150, Tierra y Libertad, Durango",
-    mapsUrl: gmaps("Taquería El Plomazo, Calle 17 de Septiembre 150, Tierra y Libertad, Durango"),
-    photo: "images/menu/la-partida.webp",
-    photoAlt: "La partida de Taquería El Plomazo",
-    schedule: EVERY_DAY("17:00 – 23:59"),
-    scheduleNote: "Horario publicado en Rappi; confirmar con el restaurante.",
+    mapQuery: "Blvd. Guadiana y Calle 17 de Septiembre, Durango, Dgo.",
+    mapsUrl: gmaps("Taquería El Plomazo, Blvd. Guadiana y Calle 17 de Septiembre, Durango"),
+    photo: "images/logo.webp",
+    photoAlt: "Logotipo de Taquería El Plomazo",
+    photoPosition: "50% 50%",
+    schedule: null,
+    scheduleNote: BRANCH_HOURS,
   },
 ];
 

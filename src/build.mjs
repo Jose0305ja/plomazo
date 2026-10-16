@@ -2,7 +2,7 @@
 // Uso: npm run build   (no requiere dependencias, solo Node).
 import { writeFileSync } from "node:fs";
 import {
-  SITE, NAV, CATEGORIES, PRODUCTS, PROMOTIONS, SERVICES, BRANCHES, GALLERY, HISTORY,
+  SITE, NAV, CATEGORIES, PRODUCTS, SERVICES, BRANCHES, GALLERY, HISTORY,
   MASCOTS, CATEGORY_MASCOT, CREW,
 } from "./content.mjs";
 
@@ -20,9 +20,9 @@ function mascot(key, className = "", { alt = "", eager = false } = {}) {
 const empty = (title, text, key) => `<div class="empty reveal">${key ? mascot(key, "empty__mascot") : ""}<p class="empty__title">${title}</p><p class="muted">${text}</p></div>`;
 
 // Foto: si hay `image` usa <img>; si no, marcador con degradado.
-function photo({ image, label, tone = 1, className = "" }) {
+function photo({ image, label, tone = 1, className = "", position = "" }) {
   if (image) {
-    return `<img class="photo ${className}" src="${esc(image)}" alt="${esc(label)}" loading="lazy">`;
+    return `<img class="photo ${className}" src="${esc(image)}" alt="${esc(label)}" loading="lazy"${position ? ` style="object-position:${position}"` : ""}>`;
   }
   return `<div class="ph tone-${tone} ${className}" role="img" aria-label="${esc(label)}"><span class="ph__label">${esc(label)}</span></div>`;
 }
@@ -105,6 +105,7 @@ function productRow(p) {
   <div class="product-row__body">
     <div class="product-row__head"><p class="product-row__name">${esc(p.name)}</p><span class="price">${money(p.price)}</span></div>
     <p class="product-row__desc">${esc(p.description)}</p>
+    ${p.illustrative ? '<span class="chip">Foto ilustrativa</span>' : ""}
     ${p.unavailable ? '<span class="badge">Agotado</span>' : ""}
   </div>
 </div>`;
@@ -114,6 +115,7 @@ function productFeature(p) {
   return `<div class="feature reveal">
   ${photo({ image: p.image, label: p.name, className: "feature__photo" })}
   <div class="feature__shade"></div>
+  ${p.illustrative ? '<span class="chip chip--float">Foto ilustrativa</span>' : ""}
   <div class="feature__text"><p class="feature__name">${esc(p.name)}</p><span class="price price--lg">${money(p.price)}</span></div>
 </div>`;
 }
@@ -136,7 +138,7 @@ const mapEmbed = (b, height = 220) =>
 function branchCard(b) {
   const hours = b.schedule ? b.schedule[0][1] : null;
   return `<article class="branch-card reveal" data-search="${esc((b.name + " " + b.zone + " " + b.address).toLowerCase())}">
-  <a class="branch-card__photo" href="sucursal-${b.slug}.html" tabindex="-1" aria-hidden="true">${photo({ image: b.photo, label: b.photoAlt, className: "branch-card__img" })}</a>
+  <a class="branch-card__photo" href="sucursal-${b.slug}.html" tabindex="-1" aria-hidden="true">${photo({ image: b.photo, label: b.photoAlt, className: "branch-card__img", position: b.photoPosition })}</a>
   <div class="branch-card__body">
     <p class="branch-card__zone">${esc(b.zone)}</p>
     <h2 class="branch-card__name"><a href="sucursal-${b.slug}.html">${esc(b.name)}</a></h2>
@@ -152,21 +154,13 @@ function branchCard(b) {
 </article>`;
 }
 
-function promoCard(p, level = 2) {
-  const h = `h${level}`;
-  return `<article class="promo reveal">
-  ${photo({ label: "Foto de la promoción pendiente", tone: p.tone, className: "promo__photo" })}
-  <div class="promo__body"><${h} class="promo__title">${esc(p.title)}</${h}><p class="muted">${esc(p.description)}</p><p class="promo__until">Vigente hasta: ${esc(p.until)}</p></div>
-</article>`;
-}
-
 const featured = PRODUCTS.filter((p) => p.featured);
 
 /* ---------- Inicio ---------- */
 page({
   file: "index.html",
   title: "El Plomazo — Taquería",
-  description: "Taquerías El Plomazo: tacos y antojitos norteños. Consulta el menú, encuentra tu sucursal más cercana y descubre las promociones activas.",
+  description: "Taquerías El Plomazo: tacos y antojitos norteños. Consulta el menú y encuentra tu sucursal más cercana.",
   current: "inicio",
   body: `<section class="hero" data-surface="carbon">
   <img class="hero__bg" src="images/portada.webp" alt="" aria-hidden="true">
@@ -272,7 +266,7 @@ page({
     <label for="branch-search" class="sr-only">Buscar sucursal</label>
     <input id="branch-search" type="search" placeholder="Buscar por nombre, calle o colonia" autocomplete="off">
   </div>
-  <div id="branch-list" class="grid grid--3">${BRANCHES.map(branchCard).join("")}</div>
+  <div id="branch-list" class="grid grid--branches">${BRANCHES.map(branchCard).join("")}</div>
   <p id="branch-empty" class="muted" hidden>No encontramos sucursales con esa búsqueda.</p>
 </div>`,
 });
@@ -287,7 +281,7 @@ for (const b of BRANCHES) {
   <p class="crumb"><a href="sucursales.html">← Todas las sucursales</a></p>
   ${titleBlock(esc(b.name))}
   <p class="lead muted anim-up" style="--d:80ms">${esc(b.address)}</p>
-  <div class="detail-photo anim-up" style="--d:120ms">${photo({ image: b.photo, label: b.photoAlt, className: "detail-photo__img" })}</div>
+  <div class="detail-photo anim-up" style="--d:120ms">${photo({ image: b.photo, label: b.photoAlt, className: "detail-photo__img", position: b.photoPosition })}</div>
   <div class="grid grid--split">
     <div class="actions anim-up" style="--d:160ms;align-content:flex-start">
       <a class="btn btn--call" href="tel:${b.phone}">Llamar</a>
@@ -306,19 +300,6 @@ for (const b of BRANCHES) {
 </div>`,
   });
 }
-
-/* ---------- Promociones ---------- */
-page({
-  file: "promociones.html",
-  title: "Promociones — El Plomazo",
-  description: "Promociones vigentes en Taquerías El Plomazo.",
-  current: "promociones",
-  body: `<div class="container page">
-  ${titleBlock("Promociones")}
-  ${PROMOTIONS.length ? `<div class="grid grid--3">${PROMOTIONS.map((p) => promoCard(p, 2)).join("")}</div>` : empty("Por ahora no hay promociones publicadas", "Síguenos en Facebook e Instagram para enterarte de las nuevas promociones.", "taco-cama")}
-  <div class="actions" style="margin-top:24px"><a class="btn" href="${SITE.facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a><a class="btn btn--outline" href="${SITE.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a></div>
-</div>`,
-});
 
 /* ---------- Galería ---------- */
 const galCats = [...new Set(GALLERY.map((g) => g.category))];
@@ -417,4 +398,4 @@ page({
 </div>`,
 });
 
-console.log("Sitio generado: index, menu, sucursales (+3 detalles), promociones, galeria, nosotros, contacto, privacidad, 404.");
+console.log("Sitio generado: index, menu, sucursales (+3 detalles), galeria, nosotros, contacto, privacidad, 404.");

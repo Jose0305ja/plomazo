@@ -16,13 +16,13 @@
 <header class="site-header" data-surface="carbon">
   <div class="container site-header__bar">
     <a href="index.html" class="brand"><img class="brand__logo" src="images/logo.webp" alt="" width="40" height="40">El Plomazo</a>
-    <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html" aria-current="page">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+    <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html" aria-current="page">Sucursales</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav">
       <span class="sr-only">Abrir menú</span>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Principal (móvil)" hidden><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html" aria-current="page">Sucursales</a><a href="promociones.html">Promociones</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Principal (móvil)" hidden><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="sucursales.html" aria-current="page">Sucursales</a><a href="galeria.html">Galería</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
 </header>
 <main id="main-content">
 <div class="container page">
@@ -31,47 +31,61 @@
     <label for="branch-search" class="sr-only">Buscar sucursal</label>
     <input id="branch-search" type="search" placeholder="Buscar por nombre, calle o colonia" autocomplete="off">
   </div>
-  <div id="branch-list" class="grid grid--3"><article class="branch-card reveal" data-search="primo de verdad valle del sur primo de verdad 601, valle del sur, 34136 durango, dgo.">
-  <a class="branch-card__photo" href="sucursal-primo-de-verdad.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/menu/arrachera-marinada.webp" alt="Arrachera marinada de Taquería El Plomazo" loading="lazy"></a>
+  <div id="branch-list" class="grid grid--branches"><article class="branch-card reveal" data-search="matriz · pino suárez sucursal matriz prolongación pino suárez #3000, col. j. guadalupe rodríguez, durango, dgo.">
+  <a class="branch-card__photo" href="sucursal-matriz-pino-suarez.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/sucursales/matriz-pino-suarez.jpg" alt="Fachada de Taquería El Plomazo en Pino Suárez" loading="lazy"></a>
+  <div class="branch-card__body">
+    <p class="branch-card__zone">Sucursal matriz</p>
+    <h2 class="branch-card__name"><a href="sucursal-matriz-pino-suarez.html">Matriz · Pino Suárez</a></h2>
+    <p class="muted branch-card__addr">Prolongación Pino Suárez #3000, Col. J. Guadalupe Rodríguez, Durango, Dgo.</p>
+    <p class="branch-card__hours">Horario por confirmar</p>
+  </div>
+  <iframe class="map" style="height:200px" title="Mapa de la sucursal Matriz · Pino Suárez" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=24.0266762%2C-104.6370087&hl=es&z=16&output=embed"></iframe>
+  <div class="actions branch-card__actions">
+    <a class="btn btn--call btn--sm" href="tel:6181534075">Llamar</a>
+    
+    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20El%20Plomazo%2C%20Pino%20Su%C3%A1rez%2C%20Hip%C3%B3dromo%2C%20Durango" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+  </div>
+</article><article class="branch-card reveal" data-search="primo de verdad valle del sur primo de verdad 601 d, valle del sur, 34136 durango, dgo.">
+  <a class="branch-card__photo" href="sucursal-primo-de-verdad.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/sucursales/primo-de-verdad.jpg" alt="Interior y carrito de tacos de la sucursal Primo de Verdad" loading="lazy" style="object-position:50% 70%"></a>
   <div class="branch-card__body">
     <p class="branch-card__zone">Valle del Sur</p>
     <h2 class="branch-card__name"><a href="sucursal-primo-de-verdad.html">Primo de Verdad</a></h2>
-    <p class="muted branch-card__addr">Primo de Verdad 601, Valle del Sur, 34136 Durango, Dgo.</p>
+    <p class="muted branch-card__addr">Primo de Verdad 601 D, Valle del Sur, 34136 Durango, Dgo.</p>
     <p class="branch-card__hours">Todos los días · 17:00 – 23:30</p>
   </div>
-  <iframe class="map" style="height:200px" title="Mapa de la sucursal Primo de Verdad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Taquer%C3%ADa%20El%20Plomazo%2C%20Primo%20de%20Verdad%20601%2C%20Valle%20del%20Sur%2C%20Durango&hl=es&z=16&output=embed"></iframe>
+  <iframe class="map" style="height:200px" title="Mapa de la sucursal Primo de Verdad" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=24.0134855%2C-104.6771364&hl=es&z=16&output=embed"></iframe>
   <div class="actions branch-card__actions">
     <a class="btn btn--call btn--sm" href="tel:6181534075">Llamar</a>
     
     <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20El%20Plomazo%2C%20Primo%20de%20Verdad%20601%2C%20Valle%20del%20Sur%2C%20Durango" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
   </div>
-</article><article class="branch-card reveal" data-search="blvd. francisco villa esq. calle lima blvd. francisco villa esq. calle lima 101, durango, dgo.">
-  <a class="branch-card__photo" href="sucursal-francisco-villa.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/menu/fua.webp" alt="Fua de Taquería El Plomazo" loading="lazy"></a>
+</article><article class="branch-card reveal" data-search="blvd. francisco villa frente a la arena lobos blvd. francisco villa esq. calle lima 101 (fracc. guadalupe), durango, dgo.">
+  <a class="branch-card__photo" href="sucursal-francisco-villa.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/sucursales/francisco-villa.jpg" alt="Fachada de Taquería El Plomazo en Blvd. Francisco Villa" loading="lazy"></a>
   <div class="branch-card__body">
-    <p class="branch-card__zone">Esq. Calle Lima</p>
+    <p class="branch-card__zone">Frente a la Arena Lobos</p>
     <h2 class="branch-card__name"><a href="sucursal-francisco-villa.html">Blvd. Francisco Villa</a></h2>
-    <p class="muted branch-card__addr">Blvd. Francisco Villa esq. Calle Lima 101, Durango, Dgo.</p>
+    <p class="muted branch-card__addr">Blvd. Francisco Villa esq. Calle Lima 101 (Fracc. Guadalupe), Durango, Dgo.</p>
     <p class="branch-card__hours">Horario por confirmar</p>
   </div>
-  <iframe class="map" style="height:200px" title="Mapa de la sucursal Blvd. Francisco Villa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Taquer%C3%ADa%20El%20Plomazo%2C%20Blvd.%20Francisco%20Villa%20y%20Calle%20Lima%20101%2C%20Durango&hl=es&z=16&output=embed"></iframe>
+  <iframe class="map" style="height:200px" title="Mapa de la sucursal Blvd. Francisco Villa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=24.0438905%2C-104.6266527&hl=es&z=16&output=embed"></iframe>
   <div class="actions branch-card__actions">
-    <a class="btn btn--call btn--sm" href="tel:6181534075">Llamar</a>
+    <a class="btn btn--call btn--sm" href="tel:6183098325">Llamar</a>
     
-    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20El%20Plomazo%2C%20Blvd.%20Francisco%20Villa%20y%20Calle%20Lima%20101%2C%20Durango" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20El%20Plomazo%2C%20Blvd.%20Francisco%20Villa%20403%2C%20Guadalupe%2C%20Durango" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
   </div>
-</article><article class="branch-card reveal" data-search="blvd. guadiana tierra y libertad calle 17 de septiembre 150, tierra y libertad, 34127 durango, dgo. (esq. blvd. guadiana)">
-  <a class="branch-card__photo" href="sucursal-guadiana.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/menu/la-partida.webp" alt="La partida de Taquería El Plomazo" loading="lazy"></a>
+</article><article class="branch-card reveal" data-search="blvd. guadiana por el puente la salle blvd. guadiana esq. calle 17 de septiembre, frente a farmacia guadalajara, durango, dgo.">
+  <a class="branch-card__photo" href="sucursal-guadiana.html" tabindex="-1" aria-hidden="true"><img class="photo branch-card__img" src="images/logo.webp" alt="Logotipo de Taquería El Plomazo" loading="lazy" style="object-position:50% 50%"></a>
   <div class="branch-card__body">
-    <p class="branch-card__zone">Tierra y Libertad</p>
+    <p class="branch-card__zone">Por el puente La Salle</p>
     <h2 class="branch-card__name"><a href="sucursal-guadiana.html">Blvd. Guadiana</a></h2>
-    <p class="muted branch-card__addr">Calle 17 de Septiembre 150, Tierra y Libertad, 34127 Durango, Dgo. (esq. Blvd. Guadiana)</p>
-    <p class="branch-card__hours">Todos los días · 17:00 – 23:59</p>
+    <p class="muted branch-card__addr">Blvd. Guadiana esq. Calle 17 de Septiembre, frente a Farmacia Guadalajara, Durango, Dgo.</p>
+    <p class="branch-card__hours">Horario por confirmar</p>
   </div>
-  <iframe class="map" style="height:200px" title="Mapa de la sucursal Blvd. Guadiana" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Taquer%C3%ADa%20El%20Plomazo%2C%20Calle%2017%20de%20Septiembre%20150%2C%20Tierra%20y%20Libertad%2C%20Durango&hl=es&z=16&output=embed"></iframe>
+  <iframe class="map" style="height:200px" title="Mapa de la sucursal Blvd. Guadiana" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Blvd.%20Guadiana%20y%20Calle%2017%20de%20Septiembre%2C%20Durango%2C%20Dgo.&hl=es&z=16&output=embed"></iframe>
   <div class="actions branch-card__actions">
     <a class="btn btn--call btn--sm" href="tel:6181534075">Llamar</a>
     
-    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20El%20Plomazo%2C%20Calle%2017%20de%20Septiembre%20150%2C%20Tierra%20y%20Libertad%2C%20Durango" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+    <a class="btn btn--outline btn--sm" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20El%20Plomazo%2C%20Blvd.%20Guadiana%20y%20Calle%2017%20de%20Septiembre%2C%20Durango" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
   </div>
 </article></div>
   <p id="branch-empty" class="muted" hidden>No encontramos sucursales con esa búsqueda.</p>
@@ -79,7 +93,7 @@
 </main>
 <footer class="site-footer">
   <div class="container site-footer__grid">
-    <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+    <div><h2>El Plomazo</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li><li><a href="sucursales.html">Sucursales</a></li><li><a href="galeria.html">Galería</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
     <div><h2>Contacto</h2><ul>
       <li><a href="tel:6181534075">618 153 4075</a></li>
       <li><a href="mailto:taqueriaelplomazo@gmail.com">taqueriaelplomazo@gmail.com</a></li>
